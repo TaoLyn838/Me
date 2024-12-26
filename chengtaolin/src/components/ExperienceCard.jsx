@@ -5,10 +5,17 @@ const ExperienceCard = ({ experience }) => {
     <div className="group relative flex gap-x-5">
       <div className="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
         <div className="relative z-10 size-6 justify-center items-center">
-          <img
-            className="shrink-0 size-6 rounded-md"
-            src={experience.logo_img}
-          />
+          <a
+            className="inline-block size-6"
+            href={experience.website}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="shrink-0 size-6 rounded-md"
+              src={experience.logo_img}
+            />
+          </a>
         </div>
       </div>
       <div className="grow pb-8 group-last:pb-0">
