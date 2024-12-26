@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "bunx --bun vite",
-    "build vite": "vite build",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "build": "bun build vite src/main.jsx --outdir=dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
