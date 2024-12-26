@@ -21,6 +21,7 @@ export const experiences = [
   {
     company: 'UMass Boston | Artificial Intelligence Research Lab',
     logo_img: '/logos/png/umass-boston-logo.png',
+    website: 'https://www.umb.edu',
     location: 'Hybrid',
     position: 'Research Assistant | Artificial Intelligence Research Lab',
     description:
@@ -35,6 +36,7 @@ export const experiences = [
   {
     company: 'CodePath',
     logo_img: '/logos/png/codepath-logo.png',
+    website: 'https://codepath.org',
     location: 'Remote',
     position: 'Tech Fellow',
     description:
@@ -49,6 +51,7 @@ export const experiences = [
   {
     company: 'Apple Inc.',
     logo_img: '/logos/png/apple-logo.png',
+    website: 'https://www.apple.com',
     location: 'Remote',
     position: 'Mentor - The 2023 Swift Mentorship Program',
     description:
@@ -63,6 +66,7 @@ export const experiences = [
   {
     company: 'HackUMass',
     logo_img: '/logos/png/hackumass-logo.png',
+    website: 'https://hackumass.com',
     location: 'Amherst, MA',
     position: 'iOS Mobile Developer',
     description:
