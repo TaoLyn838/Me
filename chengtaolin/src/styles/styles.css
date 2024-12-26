@@ -1,7 +1,0 @@
-.section-container {
-  @apply my-10 sm:my-8;
-}
-
-.section-title {
-  @apply mb-2 font-medium text-gray-800;
-}
