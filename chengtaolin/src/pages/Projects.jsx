@@ -1,7 +1,7 @@
 import { projects as initialProjects } from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { sortByMMYYYDate } from '../utils/sortUtils.js'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState(initialProjects)
@@ -17,6 +17,10 @@ const ProjectsPage = () => {
     })
     return techCount
   }
+
+  useMemo(() => {
+    setProjects(sortByMMYYYDate(projects, false))
+  }, [])
 
   const handleSortByDate = () => {
     const sortedProjects = sortByMMYYYDate(projects, isAscending)
