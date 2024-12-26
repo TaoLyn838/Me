@@ -16,6 +16,14 @@ export const projects = [
     link: 'https://devpost.com/software/ree-see-it',
   },
   {
+    title: 'ShopHub',
+    date: '07/2023',
+    description:
+      'An iOS mobile app that connects local businesses with customers, providing a platform for businesses to showcase their products and services, and for customers to discover and purchase items.',
+    technologies: ['Swift'],
+    link: 'https://github.com/algebra2boy/ShopHub',
+  },
+  {
     title: 'Unearthed',
     date: '11/2024',
     description:
