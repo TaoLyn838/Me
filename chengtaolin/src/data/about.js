@@ -1,12 +1,12 @@
 const aboutMe = {
   name: 'Chengtao Lin',
   role: 'Computer Science Student | Developer | Mentor',
-  description: `I am a passionate and dedicated Computer Science student at the
-    University of Massachusetts, Boston, with experience in mobile and web
-    application development, mentorship, and artificial intelligence
-    research. My focus lies in iOS Development, React, and AI, where I
-    strive to create functional and innovative solutions that enhance user
-    experience and solve real-world problems.`,
+  description: `I am a passionate and dedicated Computer Science graduate from 
+  the University of Massachusetts, Boston. I have experience in mobile and 
+  web application development, mentorship, and artificial intelligence research. 
+  My focus lies in iOS Development, React, and AI, where I strive to create 
+  functional and innovative solutions that enhance user experience and 
+  solve real-world problems.`,
   connectLinks: [
     {
       platform: 'Github',
@@ -22,9 +22,9 @@ const aboutMe = {
     },
     {
       platform: 'Email',
-      title: 'chengtaolin@umass.edu',
+      title: 'chengtaolinctl@gmail.com',
       logo: '/logos/svg/gmail-logo.svg',
-      href: 'mailto:chengtaolin@umass.edu',
+      href: 'mailto:chengtaolinctl@gmail.com',
     },
   ],
 }
