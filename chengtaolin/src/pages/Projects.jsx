@@ -50,9 +50,10 @@ const ProjectsPage = () => {
           Date {isAscending ? '▼' : '▲'}
         </button>
         <select
+          className="appearance-none text-gray-700 text-sm mb-3 font-medium border-2 border-gray-200 rounded-lg px-2 py-1
+          focus:outline-none focus:ring-2 focus:ring-gray-500 foucs:border-transparent"
           value={selectedTech}
           onChange={(e) => handleFilterByTech(e.target.value)}
-          className="text-gray-700 text-sm mb-3 font-medium border-2 border-gray-200 rounded-lg px-2 py-1"
         >
           <option value="All">All ({initialProjects.length})</option>
           {Object.entries(getTechCount()).map(([tech, count], index) => (
