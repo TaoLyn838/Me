@@ -51,7 +51,7 @@ const ProjectsPage = () => {
         </button>
         <select
           className="appearance-none text-gray-700 text-sm mb-3 font-medium border-2 border-gray-200 rounded-lg px-2 py-1
-          focus:outline-none focus:ring-2 focus:ring-gray-500 foucs:border-transparent"
+          focus:outline-none focus:ring-2 focus:ring-gray-500 foucs:border-transparent bg-white"
           value={selectedTech}
           onChange={(e) => handleFilterByTech(e.target.value)}
         >
