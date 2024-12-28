@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ visible }) => {
   const location = useLocation()
   const [activeLink, setActiveLink] = useState(location.pathname)
 
@@ -12,7 +12,12 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
-      <nav className="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto">
+      <nav
+        className={`appearance-none mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto 
+          transition-transform duration-500 ease-in-out ${
+            visible ? 'translate-y-0' : '-translate-y-full'
+          }`}
+      >
         <div className="px-4 md:px-0 flex justify-between items-center">
           <h2 className="flex-none rounded-md text-xl inline-block font-semibold">
             Chengtao Lin

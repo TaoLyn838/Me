@@ -36,6 +36,7 @@ const icons = {
   aws: '/logos/svg/aws-logo.svg',
   ollama: '/logos/svg/ollama-logo.svg',
   mojo: '/logos/svg/mojo-logo.svg',
+  // PNG logos
   'tesseract.js': '/logos/png/tesseract-logo.png',
 }
 

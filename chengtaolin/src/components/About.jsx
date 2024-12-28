@@ -23,7 +23,6 @@ const About = () => {
 
       {/* Conntect */}
       <div className="mt-5">
-        {/* <p className="mt-3 text-sm text-gray-600">{aboutMe.description}</p> */}
         <ul className="mt-5 flex flex-col gap-y-3">
           {aboutMe.connectLinks.map((link, index) => (
             <li key={index} className="flex items-center gap-x-2.5">
