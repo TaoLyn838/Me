@@ -19,21 +19,6 @@ export const education = [
 
 export const experiences = [
   {
-    company: 'UMass Boston | Artificial Intelligence Research Lab',
-    logo_img: '/logos/png/umass-boston-logo.png',
-    website: 'https://www.umb.edu',
-    location: 'Hybrid',
-    position: 'Research Assistant | Artificial Intelligence Research Lab',
-    description:
-      'Researching AI and machine learning with Professor Ping Chen, focusing on a novel modular neuro-symbolic approach to learning connotation information and natural language processing. Developing and implementing algorithms for text analysis and information relationships.',
-    details: [
-      'Restructured the regression model to improve epoch efficiency for the Corpus of Linguistic Acceptability (CoLA).',
-      'Increased accuracy from 67% to 83% using TensorFlow-based classification models.',
-      'Streamlined token processing using the spaCy library to enhance NLP training workflows.',
-    ],
-    date: 'Feb 2024 - Present',
-  },
-  {
     company: 'CodePath',
     logo_img: '/logos/png/codepath-logo.png',
     website: 'https://codepath.org',
@@ -49,19 +34,19 @@ export const experiences = [
     date: 'Jul 2024 - Present',
   },
   {
-    company: 'Apple Inc.',
-    logo_img: '/logos/png/apple-logo.png',
-    website: 'https://www.apple.com',
-    location: 'Remote',
-    position: 'Mentor - The 2023 Swift Mentorship Program',
+    company: 'UMass Boston | Artificial Intelligence Research Lab',
+    logo_img: '/logos/png/umass-boston-logo.png',
+    website: 'https://www.umb.edu',
+    location: 'Hybrid',
+    position: 'Research Assistant | Artificial Intelligence Research Lab',
     description:
-      'Guided a mentee through the design and development of a Swift project, ShopHub, focusing on user interface design, project management, and technical implementation.',
+      'Researching AI and machine learning with Professor Ping Chen, focusing on a novel modular neuro-symbolic approach to learning connotation information and natural language processing. Developing and implementing algorithms for text analysis and information relationships.',
     details: [
-      'Used Figma for UI design and Swift SDKs for implementation.',
-      'Conducted weekly sync meetings via Google Meet and shared feedback.',
-      'Utilized Git for version control, enabling collaborative progress management.',
+      'Restructured the regression model to improve epoch efficiency for the Corpus of Linguistic Acceptability (CoLA).',
+      'Increased accuracy from 67% to 83% using TensorFlow-based classification models.',
+      'Streamlined token processing using the spaCy library to enhance NLP training workflows.',
     ],
-    date: 'Jul 2023 - Oct 2023',
+    date: 'Feb 2024 - Present',
   },
   {
     company: 'HackUMass',
@@ -77,6 +62,21 @@ export const experiences = [
       'Implemented OCR for photo scanning and data conversion.',
     ],
     date: 'Nov 2023',
+  },
+  {
+    company: 'Apple Inc.',
+    logo_img: '/logos/png/apple-logo.png',
+    website: 'https://www.apple.com',
+    location: 'Remote',
+    position: 'Mentor - The 2023 Swift Mentorship Program',
+    description:
+      'Guided a mentee through the design and development of a Swift project, ShopHub, focusing on user interface design, project management, and technical implementation.',
+    details: [
+      'Used Figma for UI design and Swift SDKs for implementation.',
+      'Conducted weekly sync meetings via Google Meet and shared feedback.',
+      'Utilized Git for version control, enabling collaborative progress management.',
+    ],
+    date: 'Jul 2023 - Oct 2023',
   },
 ]
 
