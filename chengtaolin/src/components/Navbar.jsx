@@ -14,9 +14,9 @@ const Navbar = ({ visible }) => {
     <header className="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
       <nav
         className={`appearance-none mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto 
-          transition-transform duration-500 ease-in-out ${
-            visible ? 'translate-y-0' : '-translate-y-full'
-          }`}
+        transition-transform duration-700 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] ${
+          visible ? 'translate-y-0' : '-translate-y-full'
+        }`}
       >
         <div className="px-4 md:px-0 flex justify-between items-center">
           <h2 className="flex-none rounded-md text-xl inline-block font-semibold">

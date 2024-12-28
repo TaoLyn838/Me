@@ -11,11 +11,21 @@ function App() {
   const [lastScrollTop, setLastScrollTop] = useState(0)
 
   const controlNavBar = () => {
-    if (window.scrollY > lastScrollTop) {
+    const isAtBottom =
+      window.innerHeight + window.scrollY >= document.body.offsetHeight
+
+    if (window.scrollY === 0) {
+      setNavBarVisible(true)
+      setLastScrollTop(window.scrollY)
+      return
+    }
+
+    if (window.scrollY > lastScrollTop || isAtBottom) {
       setNavBarVisible(false)
     } else {
       setNavBarVisible(true)
     }
+
     setLastScrollTop(window.scrollY)
   }
 
