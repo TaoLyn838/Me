@@ -15,7 +15,7 @@ export function Projects() {
     <section id="work" style={{ padding: '40px 56px' }}>
       <SectionHead
         num={lang === 'en' ? '02 / work' : '02 / 作品'}
-        title={lang === 'en' ? 'Selected projects' : '精选项目'}
+        title={lang === 'en' ? 'Projects' : '项目'}
         subtitle={
           lang === 'en'
             ? 'Research systems, backend tooling, and shipped apps. Filter by stack.'
@@ -50,7 +50,11 @@ export function Projects() {
                   textTransform: 'uppercase',
                 }}
               >
-                {cat === 'All' ? (lang === 'en' ? 'All' : '全部') : cat}
+                {cat === 'All'
+                  ? (lang === 'en' ? 'All' : '全部')
+                  : cat === 'Recent'
+                    ? (lang === 'en' ? 'Recents' : '最近')
+                    : cat}
                 <span style={{ opacity: 0.5, marginLeft: 5 }}>{counts[cat]}</span>
               </button>
             ))}

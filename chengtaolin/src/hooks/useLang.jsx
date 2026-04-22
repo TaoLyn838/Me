@@ -25,19 +25,30 @@ export function useLang() {
   return useContext(LangCtx)
 }
 
-export function useProjectTabs(initial = 'All') {
+export function useProjectTabs(initial = 'Recent') {
   const [tab, setTab] = useState(initial)
-  const tabs = ['All', 'Swift', 'Web', 'ML']
+  const recentProjects = useMemo(() => {
+    return [...projects]
+      .map((project, index) => ({ ...project, _index: index }))
+      .sort((a, b) => {
+        if (b.year !== a.year) return b.year - a.year
+        return a._index - b._index
+      })
+      .slice(0, 4)
+      .map(({ _index, ...project }) => project)
+  }, [])
+  const tabs = ['All', 'Recent', 'Swift', 'Web', 'ML']
   const filtered = useMemo(() => {
     if (tab === 'All') return projects
+    if (tab === 'Recent') return recentProjects
     return projects.filter((p) => p.cat === tab)
-  }, [tab])
+  }, [recentProjects, tab])
   const counts = useMemo(() => {
-    const c = { All: projects.length }
+    const c = { All: projects.length, Recent: recentProjects.length }
     for (const cat of ['Swift', 'Web', 'ML']) {
       c[cat] = projects.filter((p) => p.cat === cat).length
     }
     return c
-  }, [])
+  }, [recentProjects])
   return { tab, setTab, tabs, counts, filtered }
 }

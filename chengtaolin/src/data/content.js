@@ -7,7 +7,7 @@ export const profileImg = profileImage
 export const copy = {
   en: {
     name: 'Chengtao Lin',
-    roleShort: 'AI Tooling Engineer',
+    roleShort: 'Software Engineer & Researcher',
     roleLong: 'MS CS · AI tooling, agents, systems',
     nowLine:
       'Currently: MS @ UMass Amherst, building AI tooling and LM-judge evaluation workflows for healthcare and research use cases.',
@@ -109,17 +109,17 @@ export const experiences = [
     },
     highlights: ['PTB / WikiText datasets', 'GNN prototypes', 'Experiment pipelines'],
   },
-  {
-    company: 'HackUMass',
-    role: { en: 'iOS Developer', zh: 'iOS 开发者' },
-    date: { en: 'Nov 2023', zh: '2023 年 11 月' },
-    location: 'Amherst, MA',
-    summary: {
-      en: 'Built the full iOS UI for Ree-See.it and integrated the app with OCR and backend services. 🏆 Best Mobile Hack.',
-      zh: '负责 Ree-See.it 的完整 iOS 界面开发，并完成 OCR 与后端服务联调。🏆 最佳移动端项目奖。',
-    },
-    highlights: ['Swift + SwiftUI', 'OCR pipeline', 'Docker + OpenAI API'],
-  },
+  // {
+  //   company: 'HackUMass',
+  //   role: { en: 'iOS Developer', zh: 'iOS 开发者' },
+  //   date: { en: 'Nov 2023', zh: '2023 年 11 月' },
+  //   location: 'Amherst, MA',
+  //   summary: {
+  //     en: 'Built the full iOS UI for Ree-See.it and integrated the app with OCR and backend services. 🏆 Best Mobile Hack.',
+  //     zh: '负责 Ree-See.it 的完整 iOS 界面开发，并完成 OCR 与后端服务联调。🏆 最佳移动端项目奖。',
+  //   },
+  //   highlights: ['Swift + SwiftUI', 'OCR pipeline', 'Docker + OpenAI API'],
+  // },
 ]
 
 export const education = [
@@ -180,6 +180,105 @@ export const projects = [
     },
     link: 'https://devpost.com/software/ree-see-it',
     featured: true,
+    year: 2023,
+  },
+  {
+    title: 'BookEZ',
+    cat: 'Web',
+    tech: ['React', 'Material UI', 'Express', 'PostgreSQL', 'Railway'],
+    desc: {
+      en: 'Full-stack nail salon booking platform with authentication, salon and technician selection, appointment booking, and profile-based booking management.',
+      zh: '面向美甲沙龙的全栈预约平台，包含登录鉴权、门店与技师选择、预约下单和个人预约管理。',
+    },
+    link: 'https://github.com/Web103-BookEZ/web103_finalproject',
+    year: 2024,
+  },
+  {
+    title: 'HobbyHub',
+    cat: 'Web',
+    tech: ['React', 'Supabase', 'Tailwind', 'Vite'],
+    desc: {
+      en: 'Community posting app with a home feed, sorting, search, comments, upvotes, and post editing or deletion.',
+      zh: '社区发帖应用，支持首页 feed、排序、搜索、评论、点赞，以及帖子编辑和删除。',
+    },
+    link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/HobbyHub',
+    year: 2024,
+  },
+  {
+    title: 'Bolt Bucket',
+    cat: 'Web',
+    tech: ['React', 'PostgreSQL', 'React Router', 'Vite'],
+    desc: {
+      en: 'Car customization app with live configuration updates, saved builds, pricing, validation, and edit or delete flows.',
+      zh: '汽车定制应用，支持实时配置更新、价格计算、保存方案，以及编辑和删除流程。',
+    },
+    link: 'https://github.com/TaoLyn838/WEB103/tree/main/Unit4/diy_delight',
+    year: 2024,
+  },
+  {
+    title: 'Virtual Community Space',
+    cat: 'Web',
+    tech: ['React', 'Express', 'PostgreSQL', 'React Router'],
+    desc: {
+      en: 'Database-backed event explorer that lets users browse community events by location through dedicated route pages.',
+      zh: '基于数据库的社区活动浏览应用，用户可以按地点查看活动，并进入对应的独立页面。',
+    },
+    link: 'https://github.com/TaoLyn838/WEB103/tree/main/Unit3/unitygrid_plaza',
+    year: 2024,
+  },
+  {
+    title: 'Crewmate',
+    cat: 'Web',
+    tech: ['React', 'Supabase', 'Tailwind', 'Vite'],
+    desc: {
+      en: 'Create, update, and manage custom Among Us crewmates with constrained attributes, summary stats, and detail pages.',
+      zh: '自定义并管理 Among Us crewmate，包含属性约束、统计信息和详情页。',
+    },
+    link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/Crewmate',
+    year: 2024,
+  },
+  {
+    title: 'BeReal Clone',
+    cat: 'Swift',
+    tech: ['Swift', 'UIKit', 'ParseSwift', 'CoreLocation'],
+    desc: {
+      en: 'BeReal-style iOS app with auth, persistent sessions, photo posting, feed refresh, camera capture, and post-gated viewing.',
+      zh: '仿 BeReal 的 iOS 应用，包含登录鉴权、会话持久化、拍照发帖、feed 刷新和发帖后可见机制。',
+    },
+    link: 'https://github.com/TaoLyn838/IOS102/tree/main/BeRealClone',
+    year: 2023,
+  },
+  {
+    title: 'Flixster',
+    cat: 'Swift',
+    tech: ['Swift', 'UIKit', 'TMDB API', 'URLSession'],
+    desc: {
+      en: 'Movie browsing app with TMDB-backed networking, table and collection views, tab navigation, and detail screens.',
+      zh: '基于 TMDB API 的电影浏览应用，包含网络请求、列表与网格视图、Tab 导航和详情页。',
+    },
+    link: 'https://github.com/TaoLyn838/IOS102/tree/main/Flixster',
+    year: 2023,
+  },
+  {
+    title: 'Photo Scavenger Hunt',
+    cat: 'Swift',
+    tech: ['Swift', 'UIKit', 'MapKit'],
+    desc: {
+      en: 'Task-based photo scavenger app that tracks completion state and shows where captured photos were taken on a map.',
+      zh: '任务式拍照 scavenger 应用，记录完成状态，并在地图上展示照片拍摄位置。',
+    },
+    link: 'https://github.com/TaoLyn838/IOS102/tree/main/PhotoScavengerHunt',
+    year: 2023,
+  },
+  {
+    title: 'Flashcards',
+    cat: 'Swift',
+    tech: ['Swift', 'UIKit'],
+    desc: {
+      en: 'Flashcard study app with card flipping, multiple-choice review, create and edit flows, persistence, and simple animations.',
+      zh: '抽认卡学习应用，支持翻卡、多项选择、自定义创建和编辑、数据持久化以及基础动画。',
+    },
+    link: 'https://github.com/TaoLyn838/Flashcards',
     year: 2023,
   },
 ]
