@@ -1,57 +1,66 @@
-import React from 'react'
-import { skills } from '../data/resume'
-import icons from '../data/icons'
+import { useLang } from '../hooks/useLang'
+import { skills, theme as T } from '../data/content'
+import { SectionHead } from './ui'
 
-const Skills = () => {
+export function Skills() {
+  const { lang } = useLang()
+  const groups = [
+    [lang === 'en' ? 'Languages' : '语言', skills.languages],
+    [lang === 'en' ? 'Frameworks' : '框架', skills.frameworks],
+    [lang === 'en' ? 'Tools' : '工具', skills.tools],
+  ]
   return (
-    <div className="section-container">
-      <h2 className="section-title">Skills</h2>
-      <div className="space-y-3">
-        <dl className="flex flex-col sm:flex-row gap-1">
-          <dt className="min-w-40">
-            <span className="block text-sm text-gray-500 ">Codebase: </span>
-          </dt>
-          <dd>
-            <ul>
-              {skills.programmingLanguages.map((skill, index) => (
-                <li
-                  key={index}
-                  className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800"
+    <section id="skills" style={{ padding: '40px 56px' }}>
+      <SectionHead
+        num={lang === 'en' ? '04 / tools' : '04 / 技术栈'}
+        title={lang === 'en' ? 'What I reach for' : '常用工具'}
+        lang={lang}
+      />
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
+        {groups.map(([label, items]) => (
+          <div
+            key={label}
+            style={{
+              background: T.card,
+              border: `1px solid ${T.rule}`,
+              borderRadius: 12,
+              padding: 18,
+            }}
+          >
+            <div
+              style={{
+                fontFamily: T.mono,
+                fontSize: 10,
+                color: T.inkFaint,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                marginBottom: 12,
+              }}
+            >
+              {label}
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {items.map((s) => (
+                <span
+                  key={s}
+                  style={{
+                    fontFamily: T.mono,
+                    fontSize: 12,
+                    padding: '5px 10px',
+                    background: T.bg,
+                    border: `1px solid ${T.rule}`,
+                    borderRadius: 6,
+                    color: T.ink,
+                    letterSpacing: '0.02em',
+                  }}
                 >
-                  <img
-                    src={icons[skill.name.toLowerCase()]}
-                    className="shrink-0 size-4 me-1 rounded-sm"
-                  />
-                  {skill.name}
-                </li>
+                  {s}
+                </span>
               ))}
-            </ul>
-          </dd>
-        </dl>
-        <dl className="flex flex-col sm:flex-row gap-1">
-          <dt className="min-w-40">
-            <span className="block text-sm text-gray-500 ">TechStack: </span>
-          </dt>
-          <dd>
-            <ul>
-              {skills.techStack.map((skill, index) => (
-                <li
-                  key={index}
-                  className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800"
-                >
-                  <img
-                    src={icons[skill.name.toLowerCase()]}
-                    className="shrink-0 size-4 me-1 rounded-sm"
-                  />
-                  {skill.name}
-                </li>
-              ))}
-            </ul>
-          </dd>
-        </dl>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   )
 }
-
-export default Skills

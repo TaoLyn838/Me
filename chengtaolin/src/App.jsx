@@ -1,48 +1,38 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/Home'
-import ProjectsPage from './pages/Projects'
-import BlogsPage from './pages/Blogs'
-import Navbar from './components/Navbar'
-import { useEffect, useState } from 'react'
+import { Navigation } from './components/Navigation'
+import { Hero } from './components/Hero'
+import { Projects } from './components/Projects'
+import { Experience } from './components/Experience'
+import { Skills } from './components/Skills'
+import { Writing } from './components/Writing'
+import { Contact } from './components/Contact'
+import { Reveal } from './components/Reveal'
+import { LangProvider } from './hooks/useLang'
+import { theme as T } from './data/content'
 
 function App() {
-  const [navBarVisible, setNavBarVisible] = useState(true)
-  const [lastScrollTop, setLastScrollTop] = useState(0)
-
-  const controlNavBar = () => {
-    const isAtBottom =
-      window.innerHeight + window.scrollY >= document.body.offsetHeight
-
-    if (window.scrollY === 0) {
-      setNavBarVisible(true)
-      setLastScrollTop(window.scrollY)
-      return
-    }
-
-    if (window.scrollY > lastScrollTop || isAtBottom) {
-      setNavBarVisible(false)
-    } else {
-      setNavBarVisible(true)
-    }
-
-    setLastScrollTop(window.scrollY)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', controlNavBar)
-    return () => window.removeEventListener('scroll', controlNavBar)
-  }, [lastScrollTop])
-
   return (
-    <Router>
-      <Navbar visible={navBarVisible} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/blogs" element={<BlogsPage />} />
-      </Routes>
-    </Router>
+    <LangProvider storageKey="dir3-lang">
+      <div
+        style={{
+          background: T.bg,
+          color: T.ink,
+          minHeight: '100%',
+          fontFamily: T.sans,
+          display: 'grid',
+          gridTemplateColumns: '320px 1fr',
+        }}
+      >
+        <Navigation />
+        <main style={{ minWidth: 0 }}>
+          <Reveal><Hero /></Reveal>
+          <Reveal><Projects /></Reveal>
+          <Reveal><Experience /></Reveal>
+          <Reveal><Skills /></Reveal>
+          <Reveal><Writing /></Reveal>
+          <Reveal><Contact /></Reveal>
+        </main>
+      </div>
+    </LangProvider>
   )
 }
 
