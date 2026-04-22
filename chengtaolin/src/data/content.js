@@ -100,7 +100,7 @@ export const experiences = [
   },
   {
     company: 'UMass Boston · Artificial Intelligence Lab',
-    role: { en: 'Research Assistant', zh: '研究助理' },
+    role: { en: 'Research Fellow', zh: '研究员' },
     date: { en: 'Jan 2024 – Present', zh: '2024 年 1 月至今' },
     location: { en: 'Boston, MA', zh: '波士顿，MA' },
     summary: {
