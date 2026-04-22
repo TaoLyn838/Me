@@ -127,7 +127,7 @@ export function Contact() {
             }}
           >
             <span>© {new Date().getFullYear()} Chengtao Lin</span>
-            <span>{lang === 'en' ? 'Amherst, MA — EST' : '阿默斯特 · 美东'}</span>
+            <span>{lang === 'en' ? 'Boston, MA — EST' : '波士顿 · 美东'}</span>
           </div>
         </div>
       </div>

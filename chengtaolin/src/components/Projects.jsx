@@ -18,8 +18,8 @@ export function Projects() {
         title={lang === 'en' ? 'Selected projects' : '精选项目'}
         subtitle={
           lang === 'en'
-            ? 'A mix of shipped apps, coursework, and research work. Filter by stack.'
-            : '包含产品、课程项目与研究工作，可按技术栈筛选。'
+            ? 'Research systems, backend tooling, and shipped apps. Filter by stack.'
+            : '包含研究系统、后端工具与已完成应用，可按技术栈筛选。'
         }
         lang={lang}
         right={

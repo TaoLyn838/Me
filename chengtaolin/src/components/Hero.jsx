@@ -40,6 +40,7 @@ function Stat({ label, value, delta }) {
 export function Hero() {
   const { lang } = useLang()
   const c = copy[lang]
+  const featuredStats = c.featured.stats ?? []
   return (
     <section id="about" style={{ padding: '72px 56px 40px' }}>
       <div
@@ -79,16 +80,13 @@ export function Hero() {
       >
         {lang === 'en' ? (
           <>
-            I build careful software —<br />
-            across <span style={{ color: T.accent }}>iOS</span>, the{' '}
-            <span style={{ color: T.accent }}>web</span>, and{' '}
-            <span style={{ color: T.accent }}> applied AI</span>.
+            I work between <span style={{ color: T.accent }}>AI research</span><br />
+            and <span style={{ color: T.accent }}>engineering</span> — building tools and workflows.
           </>
         ) : (
           <>
-            做认真的软件 —— <br />
-            横跨 <span style={{ color: T.accent }}>iOS</span>、<span style={{ color: T.accent }}>Web</span> 与{' '}
-            <span style={{ color: T.accent }}>应用型 AI</span>。
+            我在 <span style={{ color: T.accent }}>AI 研究</span> 与 <br />
+            <span style={{ color: T.accent }}>工程实践</span> 之间工作，搭建工具与 workflow。
           </>
         )}
       </h1>
@@ -121,7 +119,9 @@ export function Hero() {
       >
         <div>
           <Badge style={{ color: T.accent, background: `${T.accent}18` }}>{c.featured.kicker}</Badge>
-          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.inkFaint, marginTop: 10 }}>/research/cola-nlp</div>
+          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.inkFaint, marginTop: 10 }}>
+            {c.featured.path}
+          </div>
         </div>
         <div>
           <div
@@ -141,8 +141,9 @@ export function Hero() {
           </div>
         </div>
         <div style={{ display: 'flex', gap: 18 }}>
-          <Stat label={lang === 'en' ? 'accuracy' : '准确率'} value="83%" delta="+16" />
-          <Stat label={lang === 'en' ? 'models' : '模型'} value="4" />
+          {featuredStats.map((stat) => (
+            <Stat key={stat.label} label={stat.label} value={stat.value} delta={stat.delta} />
+          ))}
         </div>
       </div>
     </section>

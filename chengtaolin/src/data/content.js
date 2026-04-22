@@ -7,13 +7,13 @@ export const profileImg = profileImage
 export const copy = {
   en: {
     name: 'Chengtao Lin',
-    roleShort: 'Software Engineer',
-    roleLong: 'CS graduate student · iOS, Web & AI',
+    roleShort: 'AI Tooling Engineer',
+    roleLong: 'MS CS · AI tooling, agents, systems',
     nowLine:
-      'Currently: MS @ UMass Amherst, mentoring with CodePath, building a neuro-symbolic NLP model for CoLA.',
-    bio: 'I build mobile, web, and AI systems — with a bias toward careful craft. iOS work with Swift, full-stack with React & Node, and NLP research on connotation and linguistic acceptability.',
+      'Currently: MS @ UMass Amherst, building AI tooling and LM-judge evaluation workflows for healthcare and research use cases.',
+    bio: 'I build AI tooling, backend systems, and apps, with interests in language models, agents, and game-related systems.',
     bioLong:
-      'I’m a Computer Science master’s student at UMass Amherst, and a 2024 graduate of UMass Boston. I work across iOS, the web, and applied ML — shipping production apps, teaching CodePath fellows, and researching a modular neuro-symbolic approach to language with Prof. Ping Chen.',
+      'I’m a Computer Science master’s student at UMass Amherst, graduating in May 2026, after earning my BS from UMass Boston in 2024. I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
     sections: {
       work: 'Selected work',
       experience: 'Experience',
@@ -30,24 +30,29 @@ export const copy = {
     langToggle: '中文',
     featured: {
       kicker: 'Now building',
-      title: 'Neuro-symbolic CoLA classifier',
-      desc: 'Restructured regression model; lifted accuracy from 67% → 83% with TensorFlow + spaCy. UMass Boston AI Research Lab.',
+      path: '/research/patient-education',
+      title: 'Patient education LM-judge pipeline',
+      desc: 'Unified evaluation workflow for a radiology patient-education system, comparing GPT, Gemini, and MedGemma outputs across Personalization, Doctor, and Imaging judges.',
+      stats: [
+        { label: 'judges', value: '3' },
+        { label: 'models', value: '3' },
+      ],
     },
     writing: [
-      { title: 'Why Swift feels different', date: 'Mar 2026', tag: 'Craft', read: '4 min' },
-      { title: 'Teaching algorithms to 40 fellows', date: 'Feb 2026', tag: 'Mentorship', read: '6 min' },
-      { title: 'Notes on neuro-symbolic NLP', date: 'Jan 2026', tag: 'Research', read: '8 min' },
-      { title: 'Building Ree-See.it in a weekend', date: 'Nov 2023', tag: 'Ship log', read: '5 min' },
+      { title: 'Patient education system paper', date: 'Apr 2026', tag: 'Paper', read: 'arXiv', href: 'https://arxiv.org/abs/2604.14656' },
+      { title: 'Block by Block backend notes', date: 'Fall 2025', tag: 'Systems', read: 'brief', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink' },
+      { title: 'Retrieval robustness study notes', date: 'Fall 2025', tag: 'Research', read: 'brief', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink' },
+      // { title: 'UMass Boston AI lab profile', date: '2024–Now', tag: 'Lab', read: 'profile', href: 'https://www.umb.edu/directory/chengtaolin001/' },
     ],
   },
   zh: {
-    name: '林成涛',
-    roleShort: '软件工程师',
-    roleLong: '计算机科学硕士生 · iOS、Web 与 AI',
-    nowLine: '现状：UMass Amherst 在读硕士；CodePath 技术导师；研究面向 CoLA 的神经符号 NLP 模型。',
-    bio: '专注于移动端、Web 与 AI 系统的构建，追求严谨的工程细节。使用 Swift 开发 iOS，React 与 Node 做全栈，以及自然语言处理方向的研究工作。',
+    name: '林程涛',
+    roleShort: 'AI 工具工程师',
+    roleLong: '计算机科学硕士生 · AI 工具、Agent 与系统',
+    nowLine: '现状：UMass Amherst 在读硕士；主要在做 AI 工具与 LM-judge 评测流程，聚焦医疗与研究场景。',
+    bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
     bioLong:
-      '我是 UMass Amherst 计算机科学硕士生，2024 年毕业于 UMass Boston。工作横跨 iOS、Web 与应用机器学习 —— 在产品开发、CodePath 教学与陈平教授的神经符号语言研究之间切换。',
+      '我是 UMass Amherst 计算机科学硕士生，将于 2026 年 5 月毕业，本科毕业于 UMass Boston。我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
     sections: {
       work: '精选作品',
       experience: '工作经历',
@@ -64,14 +69,19 @@ export const copy = {
     langToggle: 'EN',
     featured: {
       kicker: '正在开发',
-      title: '神经符号 CoLA 分类器',
-      desc: '重构回归模型；借助 TensorFlow 与 spaCy，准确率从 67% 提升至 83%。UMass Boston AI 实验室。',
+      path: '/research/patient-education',
+      title: '患者教育 LM-judge 评测管线',
+      desc: '面向放射影像患者教育系统搭建统一评测流程，对 GPT、Gemini 与 MedGemma 在 Personalization、Doctor、Imaging 三类 judges 下的输出进行比较。',
+      stats: [
+        { label: '评测器', value: '3' },
+        { label: '模型', value: '3' },
+      ],
     },
     writing: [
-      { title: '为什么 Swift 的手感不一样', date: '2026 年 3 月', tag: '工艺', read: '4 分钟' },
-      { title: '给 40 位 Fellow 讲算法', date: '2026 年 2 月', tag: '教学', read: '6 分钟' },
-      { title: '神经符号 NLP 笔记', date: '2026 年 1 月', tag: '研究', read: '8 分钟' },
-      { title: '一个周末做出 Ree-See.it', date: '2023 年 11 月', tag: '开发日志', read: '5 分钟' },
+      { title: '患者教育系统论文', date: '2026 年 4 月', tag: '论文', read: 'arXiv', href: 'https://arxiv.org/abs/2604.14656' },
+      { title: 'Block by Block 后端笔记', date: '2025 年秋季', tag: '系统', read: '材料', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink' },
+      { title: '检索鲁棒性研究笔记', date: '2025 年秋季', tag: '研究', read: '材料', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink' },
+      // { title: 'UMass Boston AI 实验室主页', date: '2024 年至今', tag: '实验室', read: '主页', href: 'https://www.umb.edu/directory/chengtaolin001/' },
     ],
   },
 }
@@ -79,25 +89,25 @@ export const copy = {
 export const experiences = [
   {
     company: 'CodePath',
-    role: { en: 'Tech Fellow', zh: '技术 Fellow' },
-    date: { en: 'Jul 2024 – Present', zh: '2024 年 7 月至今' },
+    role: { en: 'Tech Fellow', zh: '技术助教' },
+    date: { en: 'Jul 2024 – Aug 2025', zh: '2024 年 7 月 – 2025 年 8 月' },
     location: 'Remote',
     summary: {
-      en: 'Mentoring students on data structures & algorithms; running workshops; on-call during class.',
-      zh: '为学生讲解数据结构与算法；组织工作坊；课堂答疑。',
+      en: 'Supported the Tech Interview Prep course with live algorithm Q&A, breakout-room guidance, and hands-on feedback during coding sessions.',
+      zh: '在 Tech Interview Prep 课程中负责实时算法答疑、breakout room 指导，以及 coding 练习中的逐步反馈。',
     },
-    highlights: ['Workshops on DSA + software eng.', 'Slack-based coordination', 'In-class support'],
+    highlights: ['Live Zoom Q&A', 'Guided 4–5 breakout rooms', 'Step-by-step feedback'],
   },
   {
-    company: 'UMass Boston · AI Research Lab',
+    company: 'UMass Boston · Artificial Intelligence Lab',
     role: { en: 'Research Assistant', zh: '研究助理' },
-    date: { en: 'Feb 2024 – Present', zh: '2024 年 2 月至今' },
-    location: { en: 'Hybrid', zh: '混合办公' },
+    date: { en: 'Jan 2024 – Present', zh: '2024 年 1 月至今' },
+    location: { en: 'Boston, MA', zh: '波士顿，MA' },
     summary: {
-      en: 'Neuro-symbolic NLP with Prof. Ping Chen — connotation modeling and linguistic acceptability.',
-      zh: '与陈平教授合作研究神经符号 NLP，方向包括语义褒贬建模与语言可接受性。',
+      en: 'Built research prototypes and experiment pipelines for AI memory work, including dataset preparation, GNN experiments, and iterative result analysis.',
+      zh: '围绕 AI memory 方向搭建研究原型与实验管线，负责数据整理、GNN 实验和多轮结果分析。',
     },
-    highlights: ['67% → 83% acc. on CoLA', 'spaCy token pipeline', 'TensorFlow classifiers'],
+    highlights: ['PTB / WikiText datasets', 'GNN prototypes', 'Experiment pipelines'],
   },
   {
     company: 'HackUMass',
@@ -105,21 +115,10 @@ export const experiences = [
     date: { en: 'Nov 2023', zh: '2023 年 11 月' },
     location: 'Amherst, MA',
     summary: {
-      en: 'Ree-See.it — OCR receipt scanner. 🏆 Best Mobile Hack.',
-      zh: 'Ree-See.it —— 基于 OCR 的票据扫描应用。🏆 最佳移动开发奖。',
+      en: 'Built the full iOS UI for Ree-See.it and integrated the app with OCR and backend services. 🏆 Best Mobile Hack.',
+      zh: '负责 Ree-See.it 的完整 iOS 界面开发，并完成 OCR 与后端服务联调。🏆 最佳移动端项目奖。',
     },
-    highlights: ['Swift + SwiftUI', 'Docker + OpenAI API', 'Tesseract OCR'],
-  },
-  {
-    company: 'Apple Inc.',
-    role: { en: 'Swift Mentorship Mentor', zh: 'Swift 指导计划导师' },
-    date: { en: 'Jul 2023 – Oct 2023', zh: '2023 年 7–10 月' },
-    location: 'Remote',
-    summary: {
-      en: 'Guided a mentee through design + build of ShopHub (iOS).',
-      zh: '指导学员从设计到开发完成 iOS 项目 ShopHub。',
-    },
-    highlights: ['Figma → Swift SDK', 'Weekly 1:1s', 'Git workflow'],
+    highlights: ['Swift + SwiftUI', 'OCR pipeline', 'Docker + OpenAI API'],
   },
 ]
 
@@ -127,45 +126,73 @@ export const education = [
   {
     school: { en: 'University of Massachusetts Amherst', zh: '麻省大学阿默斯特分校' },
     degree: { en: 'MS, Computer Science', zh: '计算机科学硕士' },
-    date: '2025 — ',
+    date: { en: 'Expected May 2026', zh: '预计 2026 年 5 月毕业' },
   },
   {
     school: { en: 'University of Massachusetts Boston', zh: '麻省大学波士顿分校' },
     degree: { en: 'BS, Computer Science', zh: '计算机科学学士' },
-    date: '2019 — 2024',
+    date: { en: '2019 — 2024', zh: '2019 年 — 2024 年' },
   },
 ]
 
 export const projects = [
-  { title: 'Ree-See.it', cat: 'Swift', tech: ['Swift', 'OpenAI', 'Docker', 'MongoDB'], desc: { en: 'iOS receipt scanner with OCR → structured data. 🏆 Best Mobile Hack, HackUMass.', zh: 'iOS 票据扫描应用，借助 OCR 将纸质票据结构化。🏆 HackUMass 最佳移动开发奖。' }, link: 'https://devpost.com/software/ree-see-it', featured: true, year: 2023 },
-  { title: 'AI Customer Support', cat: 'ML', tech: ['Next.js', 'OpenAI', 'Vercel', 'AWS'], desc: { en: 'LLM-backed chatbot for customer support flows.', zh: '基于大模型的客服对话机器人。' }, link: 'https://github.com/TaoLyn838/AI-Customer-Support', featured: true, year: 2024 },
-  { title: 'Unearthed', cat: 'Web', tech: ['React', 'Bun', 'Express', 'MongoDB'], desc: { en: 'Personalized music discovery from listening history.', zh: '根据听歌历史推荐新音乐。' }, link: 'https://github.com/TaoLyn838/WEB103/tree/main/Unit4/unearthed', featured: true, year: 2024 },
-  { title: 'BookEZ', cat: 'Web', tech: ['React', 'Express', 'Railway'], desc: { en: 'Online booking platform for nail salons.', zh: '面向美甲沙龙的在线预约平台。' }, link: 'https://github.com/Web103-BookEZ/web103_finalproject', year: 2024 },
-  { title: 'ShopHub', cat: 'Swift', tech: ['Swift'], desc: { en: 'iOS app connecting local businesses with customers.', zh: '连接本地商家与顾客的 iOS 应用。' }, link: 'https://github.com/algebra2boy/ShopHub', year: 2023 },
-  { title: 'Bolt Bucket', cat: 'Web', tech: ['React', 'Bun', 'Docker'], desc: { en: 'Customize your ideal car, or remix an existing one.', zh: '定制你的理想车型，或在现有车款上进行改装。' }, link: 'https://github.com/TaoLyn838/WEB103/tree/main/Unit4/diy_delight', year: 2024 },
-  { title: 'Virtual Community Space', cat: 'Web', tech: ['React', 'Express', 'Railway'], desc: { en: 'Browse community events by location and interest.', zh: '按地点与兴趣浏览社区活动。' }, link: 'https://github.com/TaoLyn838/WEB103/tree/main/Unit3/unitygrid_plaza', year: 2024 },
-  { title: 'Listicle', cat: 'Web', tech: ['React', 'Tailwind', 'MongoDB'], desc: { en: 'Structured list of Genshin Impact characters.', zh: '整理了一份原神角色清单。' }, link: 'https://github.com/TaoLyn838/WEB103/tree/main/Unit2/listicle_part2', year: 2024 },
-  { title: 'HobbyHub', cat: 'Web', tech: ['React', 'Supabase'], desc: { en: 'Social platform for hobbies and communities.', zh: '围绕兴趣爱好的社交平台。' }, link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/HobbyHub', year: 2024 },
-  { title: 'Crewmate', cat: 'Web', tech: ['React', 'Supabase'], desc: { en: 'Team builder with full CRUD.', zh: '具备完整增删改查的团队构建工具。' }, link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/Crewmate', year: 2024 },
-  { title: 'CatPath', cat: 'Web', tech: ['React', 'CSS'], desc: { en: 'Discover enchanting felines, one API at a time.', zh: '一次一张图地发现可爱猫咪。' }, link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/veni-vici!', year: 2024 },
-  { title: 'Flashcards!', cat: 'Web', tech: ['React'], desc: { en: 'Study app for ML concepts.', zh: '用于学习机器学习概念的抽认卡应用。' }, link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/flashcards-part2', year: 2024 },
-  { title: 'Community Board', cat: 'Web', tech: ['React'], desc: { en: 'Post-and-comment community board with persistence.', zh: '支持发帖与评论的社区看板。' }, link: 'https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/communityboard', year: 2024 },
-  { title: 'BeReal Clone', cat: 'Swift', tech: ['Swift', 'Back4App'], desc: { en: 'BeReal-like app with photo capture and persistent sessions.', zh: '仿 BeReal 的拍照分享应用。' }, link: 'https://github.com/TaoLyn838/IOS102/tree/main/BeRealClone', year: 2023 },
-  { title: 'Photo Scavenger Hunt', cat: 'Swift', tech: ['Swift', 'MapKit'], desc: { en: 'Task tracker with photos and geolocation.', zh: '支持照片与定位的任务追踪应用。' }, link: 'https://github.com/TaoLyn838/IOS102/tree/main/PhotoScavengerHunt', year: 2023 },
-  { title: 'Flixster', cat: 'Swift', tech: ['Swift', 'TMDB'], desc: { en: 'Movie database using the TMDB API.', zh: '基于 TMDB API 的电影数据库应用。' }, link: 'https://github.com/TaoLyn838/IOS102/tree/main/Flixster', year: 2023 },
-  { title: 'MyStory', cat: 'Swift', tech: ['Swift'], desc: { en: 'Stories with photos and text — persisted.', zh: '支持图文与本地持久化的故事应用。' }, link: 'https://github.com/TaoLyn838/IOS102/tree/main/MyStory', year: 2023 },
-  { title: 'Flashcards', cat: 'Swift', tech: ['Swift'], desc: { en: 'Create and review flashcards on iOS.', zh: 'iOS 抽认卡应用。' }, link: 'https://github.com/TaoLyn838/Flashcards', year: 2023 },
+  {
+    title: 'Patient Education System',
+    cat: 'ML',
+    tech: ['Python', 'OpenAI API', 'MedGemma', 'LLM Judges'],
+    desc: {
+      en: 'Built and evaluated a dual-agent patient-education workflow for radiology use cases, with unified LM-judge analysis across multiple model outputs.',
+      zh: '围绕放射影像患者教育场景构建并评测双 Agent workflow，使用统一 LM-judge 流程比较多种模型输出。',
+    },
+    link: 'https://arxiv.org/abs/2604.14656',
+    featured: true,
+    year: 2026,
+  },
+  {
+    title: 'Block by Block',
+    cat: 'Web',
+    tech: ['FastAPI', 'PostgreSQL', 'Python', 'REST APIs'],
+    desc: {
+      en: 'Designed backend APIs for a Minecraft server overseer project, aligning database schema and player-state responses with frontend needs.',
+      zh: '为 Minecraft server overseer 项目设计后端接口，对齐数据库 schema 与前端所需的玩家状态返回结构。',
+    },
+    link: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink',
+    year: 2025,
+  },
+  {
+    title: 'Robustness of Retrieval Models',
+    cat: 'ML',
+    tech: ['Python', 'Retrieval', 'R2MED', 'Experiment Design'],
+    desc: {
+      en: 'Supported biomedical retrieval robustness experiments through dataset selection, PMC-Treatment sampling, and hard-negative construction.',
+      zh: '围绕生物医学检索鲁棒性实验，负责数据集筛选、PMC-Treatment 采样与 hard negative 构造。',
+    },
+    link: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink',
+    year: 2025,
+  },
+  {
+    title: 'Ree-See.it',
+    cat: 'Swift',
+    tech: ['Swift', 'SwiftUI', 'OCR', 'OpenAI API', 'Docker'],
+    desc: {
+      en: 'HackUMass XI award-winning iOS app for receipt scanning and structured extraction, with full mobile UI ownership and backend integration.',
+      zh: 'HackUMass XI 获奖 iOS 应用，完成票据扫描与结构化提取，负责完整移动端界面与后端联调。',
+    },
+    link: 'https://devpost.com/software/ree-see-it',
+    featured: true,
+    year: 2023,
+  },
 ]
 
 export const skills = {
-  languages: ['Swift', 'Python', 'JavaScript', 'TypeScript', 'Java', 'C', 'SQL'],
-  frameworks: ['SwiftUI', 'React', 'Next.js', 'Node.js', 'Express', 'TensorFlow', 'PyTorch'],
-  tools: ['Git', 'Docker', 'AWS', 'Vercel', 'Firebase', 'Supabase', 'MongoDB', 'PostgreSQL'],
+  languages: ['Python', 'Swift', 'JavaScript', 'SQL', 'Java', 'C'],
+  frameworks: ['PyTorch', 'FastAPI', 'Node.js', 'Express', 'React', 'SwiftUI', 'UIKit'],
+  tools: ['OpenAI API', 'Docker', 'PostgreSQL', 'Git', 'VLMs', 'GNN', 'Xcode'],
 }
 
 export const links = {
   github: 'https://github.com/TaoLyn838',
-  linkedin: 'https://www.linkedin.com/in/chengtao-lin/',
+  linkedin: 'https://linkedin.com/in/ctlin001',
   email: 'chengtaolinctl@gmail.com',
   resume: { en: '/resume/resume_en.pdf', zh: '/resume/resume_zh.pdf' },
 }

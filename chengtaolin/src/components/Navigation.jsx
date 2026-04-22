@@ -79,7 +79,7 @@ export function Navigation() {
             }}
           />
           <span style={{ color: T.ink, fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-            {lang === 'en' ? 'Open to SWE roles' : '求职中 · SWE'}
+            {lang === 'en' ? 'Open to AI tooling / game AI roles' : '求职中 · AI 工具 / 游戏 AI'}
           </span>
         </div>
         <div style={{ color: T.inkSoft, lineHeight: 1.55, fontFamily: T.sans, fontSize: 13 }}>{c.nowLine}</div>
