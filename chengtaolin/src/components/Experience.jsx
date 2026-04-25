@@ -5,7 +5,7 @@ import { SectionHead } from './ui'
 export function Experience() {
   const { lang } = useLang()
   return (
-    <section id="experience" style={{ padding: '40px 56px' }}>
+    <section id="experience" className="section-pad" style={{ padding: '40px 56px' }}>
       <SectionHead
         num={lang === 'en' ? '03 / experience' : '03 / 经历'}
         title={lang === 'en' ? 'Where I’ve worked' : '履历'}
@@ -15,6 +15,7 @@ export function Experience() {
         {experiences.map((x) => (
           <div
             key={x.company}
+            className="experience-card"
             style={{
               background: T.card,
               border: `1px solid ${T.rule}`,
@@ -26,7 +27,7 @@ export function Experience() {
               alignItems: 'start',
             }}
           >
-            <div>
+            <div className="experience-meta">
               <div style={{ fontFamily: T.mono, fontSize: 11, color: T.inkFaint, letterSpacing: '0.04em' }}>
                 {t(x.date, lang)}
               </div>

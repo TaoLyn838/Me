@@ -14,6 +14,7 @@ export function Navigation() {
   ]
   return (
     <aside
+      className="nav-aside"
       style={{
         position: 'sticky',
         top: 0,
@@ -85,7 +86,7 @@ export function Navigation() {
         <div style={{ color: T.inkSoft, lineHeight: 1.55, fontFamily: T.sans, fontSize: 13 }}>{c.nowLine}</div>
       </div>
 
-      <nav style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <nav className="nav-list" style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         {navItems.map(([href, num, label]) => (
           <a
             key={href}
@@ -108,7 +109,7 @@ export function Navigation() {
         ))}
       </nav>
 
-      <div style={{ flex: 1 }} />
+      <div className="nav-spacer" style={{ flex: 1 }} />
 
       <div style={{ display: 'flex', gap: 8 }}>
         <button

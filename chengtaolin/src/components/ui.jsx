@@ -23,6 +23,7 @@ export function Badge({ children, style }) {
 export function SectionHead({ num, title, subtitle, lang, right }) {
   return (
     <div
+      className="section-head"
       style={{
         display: 'flex',
         alignItems: 'flex-end',
@@ -62,6 +63,7 @@ export function SectionHead({ num, title, subtitle, lang, right }) {
         </h2>
         {subtitle && (
           <div
+            className="section-subtitle"
             style={{
               fontFamily: T.sans,
               fontSize: 14,

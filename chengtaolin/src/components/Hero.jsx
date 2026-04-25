@@ -42,7 +42,7 @@ export function Hero() {
   const c = copy[lang]
   const featuredStats = c.featured.stats ?? []
   return (
-    <section id="about" style={{ padding: '72px 56px 40px' }}>
+    <section id="about" className="hero-section" style={{ padding: '72px 56px 40px' }}>
       <div
         style={{
           display: 'inline-flex',
@@ -67,6 +67,7 @@ export function Hero() {
       </div>
 
       <h1
+        className="hero-title"
         style={{
           fontFamily: lang === 'zh' ? T.cjk : T.sans,
           fontSize: 72,
@@ -92,6 +93,7 @@ export function Hero() {
       </h1>
 
       <p
+        className="hero-bio"
         style={{
           fontFamily: T.sans,
           fontSize: 18,
@@ -105,6 +107,7 @@ export function Hero() {
       </p>
 
       <div
+        className="hero-featured"
         style={{
           marginTop: 40,
           padding: 24,
@@ -140,7 +143,7 @@ export function Hero() {
             {c.featured.desc}
           </div>
         </div>
-        <div style={{ display: 'flex', gap: 18 }}>
+        <div className="hero-featured-stats" style={{ display: 'flex', gap: 18 }}>
           {featuredStats.map((stat) => (
             <Stat key={stat.label} label={stat.label} value={stat.value} delta={stat.delta} />
           ))}

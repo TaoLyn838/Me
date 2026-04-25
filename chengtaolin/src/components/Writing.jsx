@@ -6,7 +6,7 @@ export function Writing() {
   const { lang } = useLang()
   const c = copy[lang]
   return (
-    <section id="writing" style={{ padding: '40px 56px' }}>
+    <section id="writing" className="section-pad" style={{ padding: '40px 56px' }}>
       <SectionHead
         num={lang === 'en' ? '05 / writing' : '05 / 文字'}
         title={lang === 'en' ? 'Research & project notes' : '研究与项目记录'}
@@ -16,6 +16,7 @@ export function Writing() {
         {c.writing.map((w, i) => (
           <div
             key={i}
+            className="writing-row"
             style={{
               background: T.card,
               border: `1px solid ${T.rule}`,
@@ -44,6 +45,7 @@ export function Writing() {
               href={w.href}
               target="_blank"
               rel="noopener noreferrer"
+              className="writing-link"
               style={{
                 fontFamily: T.mono,
                 fontSize: 11,

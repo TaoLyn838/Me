@@ -10,13 +10,13 @@ export function Skills() {
     [lang === 'en' ? 'Tools' : '工具', skills.tools],
   ]
   return (
-    <section id="skills" style={{ padding: '40px 56px' }}>
+    <section id="skills" className="section-pad" style={{ padding: '40px 56px' }}>
       <SectionHead
         num={lang === 'en' ? '04 / tools' : '04 / 技术栈'}
         title={lang === 'en' ? 'What I reach for' : '常用工具'}
         lang={lang}
       />
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
+      <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
         {groups.map(([label, items]) => (
           <div
             key={label}

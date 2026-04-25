@@ -56,3 +56,165 @@ body {
     transition: none;
   }
 }
+
+/* Tablet — collapse the sidebar grid */
+@media (max-width: 1024px) {
+  .app-shell {
+    grid-template-columns: 1fr !important;
+  }
+  .nav-aside {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px 24px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(25, 21, 16, 0.1) !important;
+    gap: 16px !important;
+  }
+  .nav-spacer {
+    display: none !important;
+  }
+  .nav-list {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+  }
+  .nav-list a {
+    padding: 6px 10px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .hero-section {
+    padding: 40px 20px 28px !important;
+  }
+  .hero-title {
+    font-size: 38px !important;
+    line-height: 1.08 !important;
+  }
+  .hero-bio {
+    font-size: 15px !important;
+    margin-top: 20px !important;
+  }
+  .hero-featured {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 18px !important;
+    margin-top: 28px !important;
+  }
+  .hero-featured-stats {
+    gap: 18px !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-featured-stats > div > div:nth-child(2) {
+    font-size: 22px !important;
+  }
+
+  .section-pad {
+    padding: 28px 20px !important;
+  }
+  .section-head {
+    margin-bottom: 18px !important;
+    padding-bottom: 14px !important;
+    gap: 14px !important;
+  }
+  .section-head h2 {
+    font-size: 28px !important;
+  }
+  .section-head .section-subtitle {
+    font-size: 13px !important;
+  }
+
+  .tabs-pill {
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+    padding: 3px !important;
+    border-radius: 12px !important;
+  }
+  .tabs-pill button {
+    padding: 6px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .project-card {
+    grid-column: span 1 !important;
+    min-height: 0 !important;
+    padding: 18px !important;
+  }
+  .project-card .project-title {
+    font-size: 20px !important;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 18px !important;
+  }
+  .experience-meta {
+    display: flex !important;
+    gap: 10px !important;
+    align-items: baseline !important;
+    flex-wrap: wrap !important;
+  }
+  .experience-meta > div {
+    margin-top: 0 !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .writing-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 16px 18px !important;
+    align-items: start !important;
+  }
+  .writing-row .writing-meta-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .writing-row .writing-link {
+    text-align: left !important;
+    justify-self: start !important;
+  }
+
+  .contact-section {
+    padding: 28px 20px 56px !important;
+  }
+  .contact-card {
+    padding: 32px 24px !important;
+    border-radius: 16px !important;
+  }
+  .contact-card h2 {
+    font-size: 30px !important;
+  }
+  .contact-footer {
+    flex-direction: column !important;
+    gap: 6px !important;
+    align-items: flex-start !important;
+  }
+  .contact-actions a {
+    font-size: 13px !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 32px !important;
+  }
+  .section-head h2 {
+    font-size: 24px !important;
+  }
+  .contact-card h2 {
+    font-size: 26px !important;
+  }
+}

@@ -13,6 +13,7 @@ function App() {
   return (
     <LangProvider storageKey="dir3-lang">
       <div
+        className="app-shell"
         style={{
           background: T.bg,
           color: T.ink,

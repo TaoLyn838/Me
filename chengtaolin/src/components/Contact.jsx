@@ -4,8 +4,9 @@ import { links, theme as T } from '../data/content'
 export function Contact() {
   const { lang } = useLang()
   return (
-    <section id="contact" style={{ padding: '40px 56px 72px' }}>
+    <section id="contact" className="contact-section" style={{ padding: '40px 56px 72px' }}>
       <div
+        className="contact-card"
         style={{
           background: T.ink,
           color: T.bg,
@@ -50,7 +51,7 @@ export function Contact() {
           >
             {lang === 'en' ? 'Say hi — I reply within a day.' : '来打个招呼 —— 我通常一天内回复。'}
           </h2>
-          <div style={{ display: 'flex', gap: 10, marginTop: 28, flexWrap: 'wrap' }}>
+          <div className="contact-actions" style={{ display: 'flex', gap: 10, marginTop: 28, flexWrap: 'wrap' }}>
             <a
               href={`mailto:${links.email}`}
               style={{
@@ -114,6 +115,7 @@ export function Contact() {
             </a>
           </div>
           <div
+            className="contact-footer"
             style={{
               marginTop: 40,
               paddingTop: 20,

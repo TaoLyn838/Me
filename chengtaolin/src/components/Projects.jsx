@@ -12,7 +12,7 @@ export function Projects() {
   const { lang } = useLang()
   const { tab, setTab, tabs, counts, filtered } = useProjectTabs()
   return (
-    <section id="work" style={{ padding: '40px 56px' }}>
+    <section id="work" className="section-pad" style={{ padding: '40px 56px' }}>
       <SectionHead
         num={lang === 'en' ? '02 / work' : '02 / 作品'}
         title={lang === 'en' ? 'Projects' : '项目'}
@@ -24,6 +24,7 @@ export function Projects() {
         lang={lang}
         right={
           <div
+            className="tabs-pill"
             style={{
               display: 'flex',
               gap: 4,
@@ -62,7 +63,7 @@ export function Projects() {
         }
       />
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+      <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {filtered.map((p, i) => {
           const accent = CAT_ACCENT[p.cat]
           return (
@@ -71,6 +72,7 @@ export function Projects() {
               href={p.link}
               target="_blank"
               rel="noopener noreferrer"
+              className="project-card"
               style={{
                 background: T.card,
                 border: `1px solid ${T.rule}`,
@@ -98,6 +100,7 @@ export function Projects() {
               </div>
 
               <div
+                className="project-title"
                 style={{
                   fontFamily: lang === 'zh' ? T.cjk : T.sans,
                   fontSize: p.featured ? 26 : 20,
