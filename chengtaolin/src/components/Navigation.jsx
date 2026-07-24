@@ -1,174 +1,136 @@
+import { useEffect, useState } from 'react'
 import { useLang } from '../hooks/useLang'
-import { copy, links, profileImg, theme as T } from '../data/content'
+import { copy, links, theme as T } from '../data/content'
+
+/**
+ * The masthead already shows the name in 68px serif, so repeating it in the nav
+ * is redundant while the hero is on screen. Show the wordmark only once the
+ * masthead name has scrolled out of view.
+ */
+function useWordmarkVisible() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const target = document.querySelector('.hero-title')
+    // No masthead on the page (or no IO support) — fall back to always showing it.
+    if (!target || typeof IntersectionObserver === 'undefined') {
+      setVisible(true)
+      return
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => setVisible(!entry.isIntersecting),
+      { rootMargin: '-72px 0px 0px 0px' }
+    )
+    io.observe(target)
+    return () => io.disconnect()
+  }, [])
+
+  return visible
+}
 
 export function Navigation() {
   const { lang, setLang } = useLang()
   const c = copy[lang]
+  const wordmarkVisible = useWordmarkVisible()
   const navItems = [
-    ['about', '01', lang === 'en' ? 'About' : '关于'],
-    ['work', '02', lang === 'en' ? 'Work' : '作品'],
-    ['experience', '03', lang === 'en' ? 'Experience' : '经历'],
-    ['skills', '04', lang === 'en' ? 'Tools' : '技术栈'],
-    ['writing', '05', lang === 'en' ? 'Writing' : '文字'],
-    ['contact', '06', lang === 'en' ? 'Contact' : '联系'],
+    ['work', lang === 'en' ? 'Work' : '作品'],
+    ['experience', lang === 'en' ? 'Experience' : '经历'],
+    ['writing', lang === 'en' ? 'Writing' : '文字'],
+    ['contact', lang === 'en' ? 'Contact' : '联系'],
   ]
+
   return (
-    <aside
-      className="nav-aside"
+    <header
+      className="site-nav"
       style={{
         position: 'sticky',
         top: 0,
-        alignSelf: 'start',
-        width: 320,
-        height: '100vh',
-        padding: '36px 28px',
-        borderRight: `1px solid ${T.rule}`,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 24,
+        zIndex: 20,
+        background: T.bg,
+        borderBottom: `1px solid ${T.rule}`,
       }}
     >
-      <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
-        <div
-          style={{
-            width: 48,
-            height: 48,
-            borderRadius: 10,
-            overflow: 'hidden',
-            flexShrink: 0,
-            border: `1px solid ${T.rule}`,
-          }}
-        >
-          <img src={profileImg} alt={c.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        </div>
-        <div>
-          <div
-            style={{
-              fontFamily: lang === 'zh' ? T.cjk : T.sans,
-              fontSize: 17,
-              fontWeight: 600,
-              color: T.ink,
-              letterSpacing: '-0.01em',
-            }}
-          >
-            {c.name}
-          </div>
-          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.inkSoft, marginTop: 2 }}>{c.roleShort}</div>
-        </div>
-      </div>
-
       <div
-        style={{
-          padding: 14,
-          borderRadius: 10,
-          background: T.card,
-          border: `1px solid ${T.rule}`,
-          fontFamily: T.mono,
-          fontSize: 11,
-          color: T.inkSoft,
-          lineHeight: 1.6,
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-          <span
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: 999,
-              background: T.dot,
-              boxShadow: `0 0 0 3px ${T.dot}22`,
-            }}
-          />
-          <span style={{ color: T.ink, fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-            {lang === 'en' ? 'Open to AI tooling / game AI roles' : '求职中 · AI 工具 / 游戏 AI'}
-          </span>
-        </div>
-        <div style={{ color: T.inkSoft, lineHeight: 1.55, fontFamily: T.sans, fontSize: 13 }}>{c.nowLine}</div>
-      </div>
-
-      <nav className="nav-list" style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        {navItems.map(([href, num, label]) => (
-          <a
-            key={href}
-            href={`#${href}`}
-            className="sidebar-link"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 12,
-              padding: '8px 10px',
-              borderRadius: 6,
-              fontFamily: T.sans,
-              fontSize: 14,
-              color: T.ink,
-            }}
-          >
-            <span style={{ fontFamily: T.mono, fontSize: 10, color: T.inkFaint, width: 18 }}>{num}</span>
-            <span>{label}</span>
-          </a>
-        ))}
-      </nav>
-
-      <div className="nav-spacer" style={{ flex: 1 }} />
-
-      <div style={{ display: 'flex', gap: 8 }}>
-        <button
-          onClick={() => setLang(lang === 'en' ? 'zh' : 'en')}
-          style={{
-            flex: 1,
-            fontFamily: T.mono,
-            fontSize: 11,
-            padding: '10px 0',
-            cursor: 'pointer',
-            background: 'transparent',
-            color: T.ink,
-            border: `1px solid ${T.ruleSolid}`,
-            borderRadius: 7,
-            letterSpacing: '0.08em',
-          }}
-        >
-          EN / 中文
-          <span style={{ marginLeft: 4, color: T.accent, fontWeight: 600 }}>↔</span>
-        </button>
-        <a
-          href={links.resume[lang]}
-          download
-          style={{
-            flex: 1,
-            fontFamily: T.mono,
-            fontSize: 11,
-            padding: '10px 0',
-            textAlign: 'center',
-            background: T.ink,
-            color: T.bg,
-            borderRadius: 7,
-            letterSpacing: '0.08em',
-          }}
-        >
-          {lang === 'en' ? 'CV ↓' : '简历 ↓'}
-        </a>
-      </div>
-
-      <div
+        className="doc-column site-nav-inner"
         style={{
           display: 'flex',
-          gap: 12,
-          fontFamily: T.mono,
-          fontSize: 11,
-          color: T.inkFaint,
-          letterSpacing: '0.04em',
+          alignItems: 'baseline',
+          justifyContent: 'space-between',
+          gap: 16,
+          padding: '17px 28px 15px',
+          flexWrap: 'wrap',
         }}
       >
-        <a href={links.github} target="_blank" rel="noopener noreferrer">
-          github
+        <a
+          href="#about"
+          className="nav-wordmark"
+          aria-hidden={!wordmarkVisible}
+          tabIndex={wordmarkVisible ? undefined : -1}
+          style={{
+            fontFamily: T.serif,
+            fontSize: 17.5,
+            fontWeight: 600,
+            color: T.ink,
+            minWidth: 0,
+            opacity: wordmarkVisible ? 1 : 0,
+            transform: wordmarkVisible ? 'none' : 'translateY(-4px)',
+            pointerEvents: wordmarkVisible ? 'auto' : 'none',
+            transition: 'opacity 0.3s ease, transform 0.3s ease',
+          }}
+        >
+          {c.name}
         </a>
-        <span>·</span>
-        <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
-          linkedin
-        </a>
-        <span>·</span>
-        <a href={`mailto:${links.email}`}>email</a>
+
+        <nav
+          className="site-nav-links"
+          style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap', minWidth: 0 }}
+        >
+          {navItems.map(([href, label]) => (
+            <a
+              key={href}
+              href={`#${href}`}
+              className="nav-link"
+              style={{
+                fontFamily: T.sans,
+                fontSize: 14.5,
+                color: T.inkSoft,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {label}
+            </a>
+          ))}
+          <button
+            onClick={() => setLang(lang === 'en' ? 'zh' : 'en')}
+            className="nav-link"
+            style={{
+              fontFamily: T.sans,
+              fontSize: 14.5,
+              padding: 0,
+              cursor: 'pointer',
+              background: 'none',
+              border: 'none',
+              color: T.inkSoft,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {c.langToggle}
+          </button>
+          <a
+            href={links.resume[lang]}
+            download
+            style={{
+              fontFamily: T.sans,
+              fontSize: 14.5,
+              fontWeight: 500,
+              color: T.accent,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {lang === 'en' ? 'Résumé ↓' : '简历 ↓'}
+          </a>
+        </nav>
       </div>
-    </aside>
+    </header>
   )
 }

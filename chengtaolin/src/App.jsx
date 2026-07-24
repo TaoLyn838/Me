@@ -18,20 +18,23 @@ function App() {
           background: T.bg,
           color: T.ink,
           minHeight: '100%',
+          width: '100%',
           fontFamily: T.sans,
-          display: 'grid',
-          gridTemplateColumns: '320px 1fr',
         }}
       >
+        {/* Full-bleed sticky bar so the background covers the page gutters */}
         <Navigation />
-        <main style={{ minWidth: 0 }}>
-          <Reveal><Hero /></Reveal>
-          <Reveal><Projects /></Reveal>
-          <Reveal><Experience /></Reveal>
-          <Reveal><Skills /></Reveal>
-          <Reveal><Writing /></Reveal>
-          <Reveal><Contact /></Reveal>
-        </main>
+
+        <div className="doc-column">
+          <main>
+            <Reveal><Hero /></Reveal>
+            <Reveal><Projects /></Reveal>
+            <Reveal><Experience /></Reveal>
+            <Reveal><Skills /></Reveal>
+            <Reveal><Writing /></Reveal>
+            <Reveal><Contact /></Reveal>
+          </main>
+        </div>
       </div>
     </LangProvider>
   )

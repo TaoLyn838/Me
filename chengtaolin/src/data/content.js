@@ -28,6 +28,9 @@ export const copy = {
     ctaContact: 'Email me',
     ctaWork: 'See work',
     langToggle: '中文',
+    // Masthead title-page block: italic role line + letterspaced meta row.
+    mastheadRole: 'Software Engineer & Researcher',
+    mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to 2026 roles'],
     featured: {
       kicker: 'Now building',
       path: '/research/patient-education',
@@ -67,6 +70,9 @@ export const copy = {
     ctaContact: '发邮件',
     ctaWork: '查看作品',
     langToggle: 'EN',
+    // 刊头区块：斜体职位行 + 字距展开的信息行
+    mastheadRole: '软件工程师 · 研究员',
+    mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找 2026 年岗位'],
     featured: {
       kicker: '正在开发',
       path: '/research/patient-education',
@@ -297,20 +303,21 @@ export const links = {
 }
 
 export const theme = {
-  bg: '#ece5d5',
-  bgAlt: '#e3dbc8',
-  card: '#f7f1e3',
-  ink: '#191510',
-  inkSoft: '#5b5141',
-  inkFaint: '#8f8470',
-  rule: 'rgba(25,21,16,0.12)',
-  ruleSolid: 'rgba(25,21,16,0.22)',
-  accent: '#5e6b2b',
-  accentSoft: '#b8c07e',
-  dot: '#c26a38',
-  sans: 'Inter, sans-serif',
+  bg: '#fbfaf7',
+  bgAlt: '#f4f2ec',
+  card: '#ffffff',
+  ink: '#1c1c1a',
+  inkSoft: '#5f5a50',
+  inkFaint: '#8f887b',
+  rule: 'rgba(28,28,26,0.10)',
+  ruleSolid: 'rgba(28,28,26,0.22)',
+  accent: '#9a3412',
+  accentSoft: '#e8d5c4',
+  dot: '#9a3412',
+  sans: 'Inter, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif',
+  serif: "'Source Serif 4', Georgia, 'Times New Roman', 'Noto Serif SC', 'Songti SC', serif",
   mono: "'JetBrains Mono', monospace",
-  cjk: "'Noto Serif SC', serif",
+  cjk: "'Noto Serif SC', 'Songti SC', serif",
 }
 
 export function t(val, lang) {

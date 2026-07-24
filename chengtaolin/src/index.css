@@ -6,7 +6,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #ece5d5;
+  background: #fbfaf7;
+  max-width: 100%;
+  /* `clip` (not `hidden`) — `hidden` makes html/body a scroll container,
+     which silently breaks `position: sticky` on the nav in Chrome/Safari. */
+  overflow-x: clip;
 }
 
 * {
@@ -25,15 +29,66 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 ::selection {
-  background: #5e6b2b;
-  color: #ece5d5;
+  background: #9a3412;
+  color: #fbfaf7;
 }
 
-.sidebar-link:hover {
-  background: rgba(25, 21, 16, 0.05);
+/* ---- Document column ---- */
+.doc-column {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Large displays: a touch more column and a nudge up in body size, so the
+   page doesn't read as a narrow ribbon on a 27" monitor. */
+@media (min-width: 1400px) {
+  .doc-column {
+    max-width: 860px;
+  }
+  .hero-title {
+    font-size: 76px;
+  }
+  .hero-longbio {
+    font-size: 18px;
+  }
+}
+
+/* Sticky bar is full-bleed; only its inner column is constrained. */
+.site-nav {
+  width: 100%;
+}
+
+/* Grid and flex children default to min-width:auto, which lets long words
+   blow out the track. Reset it so every column can actually shrink. */
+.experience-card > *,
+.skills-row > *,
+.writing-row > *,
+.project-row > div > *,
+.section-head > div > * {
+  min-width: 0;
+}
+
+/* ---- Interactions ---- */
+.nav-link:hover,
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-row:hover .project-title {
+  color: #9a3412;
+}
+
+.writing-row:hover .writing-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .reveal {
@@ -55,104 +110,94 @@ body {
     transform: none;
     transition: none;
   }
-}
-
-/* Tablet — collapse the sidebar grid */
-@media (max-width: 1024px) {
-  .app-shell {
-    grid-template-columns: 1fr !important;
-  }
-  .nav-aside {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 20px 24px !important;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(25, 21, 16, 0.1) !important;
-    gap: 16px !important;
-  }
-  .nav-spacer {
-    display: none !important;
-  }
-  .nav-list {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 2px !important;
-  }
-  .nav-list a {
-    padding: 6px 10px !important;
+  .nav-wordmark {
+    transition: none !important;
   }
 }
 
-/* Mobile */
+/* ---- Tablet ---- */
+@media (max-width: 860px) {
+  .experience-card,
+  .skills-row {
+    grid-template-columns: 120px 1fr !important;
+    gap: 18px !important;
+  }
+}
+
+/* ---- Mobile ---- */
 @media (max-width: 720px) {
+  .doc-column {
+    padding: 0 20px;
+  }
+  .site-nav-inner {
+    padding: 13px 20px 11px !important;
+  }
+  .site-nav-links {
+    gap: 14px !important;
+  }
+
   .hero-section {
-    padding: 40px 20px 28px !important;
+    padding: 44px 0 40px !important;
   }
   .hero-title {
-    font-size: 38px !important;
-    line-height: 1.08 !important;
+    font-size: 45px !important;
+    line-height: 1.1 !important;
+  }
+  .colophon-kicker {
+    letter-spacing: 0.16em !important;
+    margin-top: 22px !important;
+  }
+  .masthead-role {
+    font-size: 19px !important;
+    margin-top: 12px !important;
+  }
+  .masthead-meta {
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+    gap: 6px 12px !important;
+    margin-top: 18px !important;
+  }
+  .masthead-meta > span {
+    gap: 12px !important;
+  }
+  .masthead-rule {
+    margin-top: 22px !important;
   }
   .hero-bio {
-    font-size: 15px !important;
-    margin-top: 20px !important;
+    font-size: 15.5px !important;
+    margin-top: 18px !important;
   }
-  .hero-featured {
-    grid-template-columns: 1fr !important;
+  .hero-longbio {
+    font-size: 16px !important;
+    margin-top: 32px !important;
+  }
+  .hero-links {
     gap: 16px !important;
-    padding: 18px !important;
-    margin-top: 28px !important;
-  }
-  .hero-featured-stats {
-    gap: 18px !important;
-    flex-wrap: wrap !important;
-  }
-  .hero-featured-stats > div > div:nth-child(2) {
-    font-size: 22px !important;
   }
 
   .section-pad {
-    padding: 28px 20px !important;
+    padding: 40px 0 !important;
   }
   .section-head {
-    margin-bottom: 18px !important;
-    padding-bottom: 14px !important;
-    gap: 14px !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 12px !important;
   }
   .section-head h2 {
     font-size: 28px !important;
   }
-  .section-head .section-subtitle {
-    font-size: 13px !important;
-  }
-
   .tabs-pill {
     flex-wrap: wrap !important;
-    gap: 2px !important;
-    padding: 3px !important;
-    border-radius: 12px !important;
-  }
-  .tabs-pill button {
-    padding: 6px 10px !important;
-    font-size: 10px !important;
+    gap: 12px !important;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .project-card {
-    grid-column: span 1 !important;
-    min-height: 0 !important;
-    padding: 18px !important;
-  }
-  .project-card .project-title {
-    font-size: 20px !important;
+  .project-meta {
+    text-align: left !important;
   }
 
   .experience-card {
     grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    padding: 18px !important;
+    gap: 8px !important;
+    padding: 20px 0 !important;
   }
   .experience-meta {
     display: flex !important;
@@ -164,57 +209,47 @@ body {
     margin-top: 0 !important;
   }
 
-  .skills-grid {
+  .skills-row {
     grid-template-columns: 1fr !important;
+    gap: 4px !important;
+    padding: 14px 0 !important;
   }
 
   .writing-row {
     grid-template-columns: 1fr !important;
-    gap: 8px !important;
-    padding: 16px 18px !important;
-    align-items: start !important;
-  }
-  .writing-row .writing-meta-row {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: 12px !important;
+    gap: 4px !important;
+    padding: 16px 0 !important;
   }
   .writing-row .writing-link {
-    text-align: left !important;
     justify-self: start !important;
   }
 
+  .contact-email {
+    font-size: 24px !important;
+  }
   .contact-section {
-    padding: 28px 20px 56px !important;
-  }
-  .contact-card {
-    padding: 32px 24px !important;
-    border-radius: 16px !important;
-  }
-  .contact-card h2 {
-    font-size: 30px !important;
-  }
-  .contact-footer {
-    flex-direction: column !important;
-    gap: 6px !important;
-    align-items: flex-start !important;
-  }
-  .contact-actions a {
-    font-size: 13px !important;
-    padding: 10px 14px !important;
+    padding: 40px 0 48px !important;
   }
 }
 
-/* Small phones */
-@media (max-width: 380px) {
+/* ---- Small phones ---- */
+@media (max-width: 420px) {
+  .doc-column {
+    padding: 0 16px;
+  }
+  .site-nav-inner {
+    padding: 12px 16px 10px !important;
+  }
   .hero-title {
-    font-size: 32px !important;
+    font-size: 37px !important;
+  }
+  .masthead-role {
+    font-size: 17px !important;
   }
   .section-head h2 {
-    font-size: 24px !important;
+    font-size: 25px !important;
   }
-  .contact-card h2 {
-    font-size: 26px !important;
+  .contact-email {
+    font-size: 20px !important;
   }
 }

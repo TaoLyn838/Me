@@ -10,53 +10,39 @@ export function Skills() {
     [lang === 'en' ? 'Tools' : '工具', skills.tools],
   ]
   return (
-    <section id="skills" className="section-pad" style={{ padding: '40px 56px' }}>
+    <section id="skills" className="section-pad" style={{ padding: '56px 0' }}>
       <SectionHead
-        num={lang === 'en' ? '04 / tools' : '04 / 技术栈'}
+        num={lang === 'en' ? 'Tools' : '技术栈'}
         title={lang === 'en' ? 'What I reach for' : '常用工具'}
         lang={lang}
       />
-      <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
+      <div>
         {groups.map(([label, items]) => (
           <div
             key={label}
+            className="skills-row"
             style={{
-              background: T.card,
-              border: `1px solid ${T.rule}`,
-              borderRadius: 12,
-              padding: 18,
+              display: 'grid',
+              gridTemplateColumns: '150px 1fr',
+              gap: 24,
+              padding: '16px 0',
+              borderBottom: `1px solid ${T.rule}`,
+              alignItems: 'baseline',
             }}
           >
             <div
               style={{
-                fontFamily: T.mono,
-                fontSize: 10,
+                fontFamily: T.sans,
+                fontSize: 12,
                 color: T.inkFaint,
-                letterSpacing: '0.1em',
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                marginBottom: 12,
               }}
             >
               {label}
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {items.map((s) => (
-                <span
-                  key={s}
-                  style={{
-                    fontFamily: T.mono,
-                    fontSize: 12,
-                    padding: '5px 10px',
-                    background: T.bg,
-                    border: `1px solid ${T.rule}`,
-                    borderRadius: 6,
-                    color: T.ink,
-                    letterSpacing: '0.02em',
-                  }}
-                >
-                  {s}
-                </span>
-              ))}
+            <div style={{ fontFamily: T.sans, fontSize: 17, color: T.ink, lineHeight: 1.8 }}>
+              {items.join(' · ')}
             </div>
           </div>
         ))}

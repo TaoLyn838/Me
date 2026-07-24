@@ -1,153 +1,173 @@
 import { useLang } from '../hooks/useLang'
 import { copy, theme as T } from '../data/content'
-import { Badge } from './ui'
-
-function Stat({ label, value, delta }) {
-  return (
-    <div>
-      <div
-        style={{
-          fontFamily: T.mono,
-          fontSize: 10,
-          color: T.inkFaint,
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-          marginBottom: 4,
-        }}
-      >
-        {label}
-      </div>
-      <div
-        style={{
-          fontFamily: T.sans,
-          fontSize: 28,
-          fontWeight: 600,
-          color: T.ink,
-          letterSpacing: '-0.02em',
-        }}
-      >
-        {value}
-        {delta && (
-          <span style={{ fontFamily: T.mono, fontSize: 11, color: T.accent, marginLeft: 6, fontWeight: 500 }}>
-            {delta}
-          </span>
-        )}
-      </div>
-    </div>
-  )
-}
 
 export function Hero() {
   const { lang } = useLang()
   const c = copy[lang]
-  const featuredStats = c.featured.stats ?? []
+  const stats = (c.featured.stats ?? []).map((s) => `${s.value} ${s.label}`).join(' · ')
+
   return (
-    <section id="about" className="hero-section" style={{ padding: '72px 56px 40px' }}>
-      <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 8,
-          fontFamily: T.mono,
-          fontSize: 11,
-          letterSpacing: '0.08em',
-          color: T.inkSoft,
-          textTransform: 'uppercase',
-          marginBottom: 28,
-          padding: '6px 12px',
-          borderRadius: 999,
-          background: T.card,
-          border: `1px solid ${T.rule}`,
-        }}
-      >
-        <span style={{ width: 6, height: 6, borderRadius: 999, background: T.accent }} />
-        {lang === 'en'
-          ? `hello(world) // ${new Date().getFullYear()}`
-          : `你好，世界 // ${new Date().getFullYear()}`}
+    <section id="about" className="hero-section" style={{ padding: '84px 0 56px' }}>
+      {/* ---- Masthead (centered, mockup B) ---- */}
+      <div className="masthead" style={{ textAlign: 'center' }}>
+        <h1
+          className="hero-title"
+          style={{
+            fontFamily: T.serif,
+            fontSize: 68,
+            lineHeight: 1.06,
+            fontWeight: 500,
+            letterSpacing: '-0.015em',
+            margin: 0,
+            color: T.ink,
+            overflowWrap: 'break-word',
+          }}
+        >
+          {c.name}
+        </h1>
+
+        <div
+          className="masthead-role"
+          style={{
+            fontFamily: T.serif,
+            fontSize: 22,
+            fontStyle: 'italic',
+            fontWeight: 400,
+            lineHeight: 1.4,
+            color: T.accent,
+            marginTop: 14,
+          }}
+        >
+          {c.mastheadRole}
+        </div>
+
+        <div className="masthead-rule" style={{ height: 1, background: T.rule, margin: '26px auto 0', maxWidth: 480 }} />
+
+        <p
+          className="hero-bio"
+          style={{
+            fontFamily: T.sans,
+            fontSize: 16.5,
+            lineHeight: 1.7,
+            color: T.inkSoft,
+            margin: '20px auto 0',
+            maxWidth: 520,
+          }}
+        >
+          {c.bio}
+        </p>
+
+        <div className="masthead-rule" style={{ height: 1, background: T.rule, margin: '26px auto 0', maxWidth: 480 }} />
+
+        <div
+          className="masthead-meta"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: '8px 18px',
+            marginTop: 20,
+            fontFamily: T.sans,
+            fontSize: 12,
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            color: T.inkFaint,
+          }}
+        >
+          {(c.mastheadMeta ?? []).map((item, i) => (
+            <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 18 }}>
+              {i > 0 && (
+                <span aria-hidden="true" style={{ opacity: 0.5 }}>
+                  ·
+                </span>
+              )}
+              {item}
+            </span>
+          ))}
+        </div>
       </div>
 
-      <h1
-        className="hero-title"
-        style={{
-          fontFamily: lang === 'zh' ? T.cjk : T.sans,
-          fontSize: 72,
-          lineHeight: 1.02,
-          letterSpacing: '-0.03em',
-          fontWeight: 600,
-          margin: 0,
-          color: T.ink,
-          maxWidth: 900,
-        }}
-      >
-        {lang === 'en' ? (
-          <>
-            I work between <span style={{ color: T.accent }}>AI research</span><br />
-            and <span style={{ color: T.accent }}>engineering</span> — building tools and workflows.
-          </>
-        ) : (
-          <>
-            我在 <span style={{ color: T.accent }}>AI 研究</span> 与 <br />
-            <span style={{ color: T.accent }}>工程实践</span> 之间工作，搭建工具与 workflow。
-          </>
-        )}
-      </h1>
-
+      {/* ---- Body (left-aligned for readability) ---- */}
       <p
-        className="hero-bio"
+        className="hero-longbio"
         style={{
           fontFamily: T.sans,
-          fontSize: 18,
-          lineHeight: 1.55,
+          fontSize: 17,
+          lineHeight: 1.8,
           color: T.inkSoft,
-          maxWidth: 720,
-          marginTop: 28,
+          margin: '40px 0 0',
         }}
       >
         {c.bioLong}
       </p>
 
+      <p
+        style={{
+          fontFamily: T.sans,
+          fontSize: 16,
+          lineHeight: 1.75,
+          color: T.inkSoft,
+          margin: '16px 0 0',
+        }}
+      >
+        <span style={{ color: T.ink, fontWeight: 500 }}>
+          {lang === 'en' ? 'Currently. ' : '现状。'}
+        </span>
+        {c.nowLine.replace(/^(Currently:|Currently|现状：|现状:)\s*/, '')}
+      </p>
+
       <div
         className="hero-featured"
         style={{
-          marginTop: 40,
-          padding: 24,
-          borderRadius: 14,
-          background: T.card,
-          border: `1px solid ${T.rule}`,
-          display: 'grid',
-          gridTemplateColumns: '180px 1fr auto',
-          gap: 28,
-          alignItems: 'center',
+          marginTop: 36,
+          paddingTop: 20,
+          borderTop: `1px solid ${T.rule}`,
         }}
       >
-        <div>
-          <Badge style={{ color: T.accent, background: `${T.accent}18` }}>{c.featured.kicker}</Badge>
-          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.inkFaint, marginTop: 10 }}>
-            {c.featured.path}
-          </div>
+        <div
+          style={{
+            fontFamily: T.sans,
+            fontSize: 12,
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            color: T.inkFaint,
+            marginBottom: 10,
+          }}
+        >
+          {c.featured.kicker}
         </div>
-        <div>
-          <div
-            style={{
-              fontFamily: lang === 'zh' ? T.cjk : T.sans,
-              fontSize: 22,
-              fontWeight: 600,
-              color: T.ink,
-              letterSpacing: '-0.015em',
-              marginBottom: 4,
-            }}
-          >
-            {c.featured.title}
-          </div>
-          <div style={{ fontFamily: T.sans, fontSize: 14, color: T.inkSoft, lineHeight: 1.5 }}>
-            {c.featured.desc}
-          </div>
+        <div
+          style={{
+            fontFamily: T.serif,
+            fontSize: 23,
+            fontWeight: 600,
+            color: T.ink,
+            lineHeight: 1.35,
+          }}
+        >
+          {c.featured.title}
         </div>
-        <div className="hero-featured-stats" style={{ display: 'flex', gap: 18 }}>
-          {featuredStats.map((stat) => (
-            <Stat key={stat.label} label={stat.label} value={stat.value} delta={stat.delta} />
-          ))}
+        <div
+          style={{
+            fontFamily: T.sans,
+            fontSize: 16,
+            color: T.inkSoft,
+            lineHeight: 1.7,
+            marginTop: 6,
+          }}
+        >
+          {c.featured.desc}
         </div>
+        {stats && (
+          <div style={{ fontFamily: T.sans, fontSize: 14.5, color: T.inkFaint, marginTop: 10 }}>{stats}</div>
+        )}
+      </div>
+
+      {/* Single CTA. Résumé lives only in the nav; email lives only in Contact. */}
+      <div className="hero-links" style={{ display: 'flex', gap: 20, marginTop: 32, flexWrap: 'wrap' }}>
+        <a className="text-link" href="#work" style={{ fontFamily: T.sans, fontSize: 16, fontWeight: 500, color: T.accent }}>
+          {c.ctaWork} ↓
+        </a>
       </div>
     </section>
   )

@@ -5,44 +5,42 @@ import { SectionHead } from './ui'
 export function Experience() {
   const { lang } = useLang()
   return (
-    <section id="experience" className="section-pad" style={{ padding: '40px 56px' }}>
+    <section id="experience" className="section-pad" style={{ padding: '56px 0' }}>
       <SectionHead
-        num={lang === 'en' ? '03 / experience' : '03 / 经历'}
-        title={lang === 'en' ? 'Where I’ve worked' : '履历'}
+        num={lang === 'en' ? 'Experience' : '经历'}
+        title={lang === 'en' ? 'Where I’ve worked' : '工作与实习'}
         lang={lang}
       />
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div>
         {experiences.map((x) => (
           <div
             key={x.company}
             className="experience-card"
             style={{
-              background: T.card,
-              border: `1px solid ${T.rule}`,
-              borderRadius: 12,
-              padding: 20,
+              padding: '24px 0',
+              borderBottom: `1px solid ${T.rule}`,
               display: 'grid',
-              gridTemplateColumns: '200px 1fr 220px',
+              gridTemplateColumns: '150px 1fr',
               gap: 24,
               alignItems: 'start',
             }}
           >
             <div className="experience-meta">
-              <div style={{ fontFamily: T.mono, fontSize: 11, color: T.inkFaint, letterSpacing: '0.04em' }}>
+              <div style={{ fontFamily: T.sans, fontSize: 14.5, color: T.inkFaint, lineHeight: 1.5 }}>
                 {t(x.date, lang)}
               </div>
-              <div style={{ fontFamily: T.mono, fontSize: 10, color: T.inkFaint, marginTop: 4 }}>
+              <div style={{ fontFamily: T.sans, fontSize: 14.5, color: T.inkFaint, marginTop: 2, lineHeight: 1.5 }}>
                 {t(x.location, lang)}
               </div>
             </div>
             <div>
               <div
                 style={{
-                  fontFamily: lang === 'zh' ? T.cjk : T.sans,
-                  fontSize: 19,
+                  fontFamily: T.serif,
+                  fontSize: 23,
                   fontWeight: 600,
                   color: T.ink,
-                  letterSpacing: '-0.01em',
+                  lineHeight: 1.3,
                 }}
               >
                 {x.company}
@@ -50,25 +48,36 @@ export function Experience() {
               <div
                 style={{
                   fontFamily: T.sans,
-                  fontSize: 13,
+                  fontSize: 16,
                   color: T.accent,
                   fontWeight: 500,
-                  marginTop: 2,
-                  marginBottom: 8,
+                  marginTop: 3,
                 }}
               >
                 {t(x.role, lang)}
               </div>
-              <div style={{ fontFamily: T.sans, fontSize: 14, color: T.inkSoft, lineHeight: 1.55 }}>
+              <div
+                style={{
+                  fontFamily: T.sans,
+                  fontSize: 16,
+                  color: T.inkSoft,
+                  lineHeight: 1.7,
+                  marginTop: 10,
+                }}
+              >
                 {t(x.summary, lang)}
               </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {x.highlights.map((h) => (
-                <div key={h} style={{ fontFamily: T.mono, fontSize: 10, color: T.inkSoft, lineHeight: 1.5 }}>
-                  <span style={{ color: T.accent }}>›</span> {h}
-                </div>
-              ))}
+              <div style={{ marginTop: 10 }}>
+                {x.highlights.map((h) => (
+                  <div
+                    key={h}
+                    style={{ fontFamily: T.sans, fontSize: 14.5, color: T.inkSoft, lineHeight: 1.7 }}
+                  >
+                    <span style={{ color: T.accent, marginRight: 6 }}>–</span>
+                    {h}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         ))}
