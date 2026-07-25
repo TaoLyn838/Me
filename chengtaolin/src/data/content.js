@@ -13,7 +13,7 @@ export const copy = {
       'Recently graduated with an MS in CS from UMass Amherst. Building AI tooling and LM-judge evaluation workflows for healthcare and research use cases, and open to new-grad software roles.',
     bio: 'I build AI tooling, backend systems, and apps, with interests in language models, agents, and game-related systems.',
     bioLong:
-      'I hold an MS in Computer Science from UMass Amherst and a BS from UMass Boston. I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
+      'I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
     sections: {
       work: 'Selected work',
       experience: 'Experience',
@@ -55,7 +55,7 @@ export const copy = {
     nowLine: '现状：已从 UMass Amherst 获得计算机科学硕士学位；主要在做 AI 工具与 LM-judge 评测流程，聚焦医疗与研究场景，目前正在寻找应届生岗位。',
     bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
     bioLong:
-      '我本科毕业于 UMass Boston，并在 UMass Amherst 获得计算机科学硕士学位。我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
+      '我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
     sections: {
       work: '精选作品',
       experience: '工作经历',
