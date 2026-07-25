@@ -10,10 +10,10 @@ export const copy = {
     roleShort: 'Software Engineer & Researcher',
     roleLong: 'MS CS · AI tooling, agents, systems',
     nowLine:
-      'Currently: MS @ UMass Amherst, building AI tooling and LM-judge evaluation workflows for healthcare and research use cases.',
+      'Recently graduated with an MS in CS from UMass Amherst. Building AI tooling and LM-judge evaluation workflows for healthcare and research use cases, and open to new-grad software roles.',
     bio: 'I build AI tooling, backend systems, and apps, with interests in language models, agents, and game-related systems.',
     bioLong:
-      'I’m a Computer Science master’s student at UMass Amherst, graduating in May 2026, after earning my BS from UMass Boston in 2024. I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
+      'I hold an MS in Computer Science from UMass Amherst and a BS from UMass Boston. I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
     sections: {
       work: 'Selected work',
       experience: 'Experience',
@@ -30,7 +30,7 @@ export const copy = {
     langToggle: '中文',
     // Masthead title-page block: italic role line + letterspaced meta row.
     mastheadRole: 'Software Engineer & Researcher',
-    mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to 2026 roles'],
+    mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to new-grad roles'],
     featured: {
       kicker: 'Now building',
       path: '/research/patient-education',
@@ -51,11 +51,11 @@ export const copy = {
   zh: {
     name: '林程涛',
     roleShort: 'AI 工具工程师',
-    roleLong: '计算机科学硕士生 · AI 工具、Agent 与系统',
-    nowLine: '现状：UMass Amherst 在读硕士；主要在做 AI 工具与 LM-judge 评测流程，聚焦医疗与研究场景。',
+    roleLong: '计算机科学硕士 · AI 工具、Agent 与系统',
+    nowLine: '现状：已从 UMass Amherst 获得计算机科学硕士学位；主要在做 AI 工具与 LM-judge 评测流程，聚焦医疗与研究场景，目前正在寻找应届生岗位。',
     bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
     bioLong:
-      '我是 UMass Amherst 计算机科学硕士生，将于 2026 年 5 月毕业，本科毕业于 UMass Boston。我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
+      '我本科毕业于 UMass Boston，并在 UMass Amherst 获得计算机科学硕士学位。我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
     sections: {
       work: '精选作品',
       experience: '工作经历',
@@ -72,7 +72,7 @@ export const copy = {
     langToggle: 'EN',
     // 刊头区块：斜体职位行 + 字距展开的信息行
     mastheadRole: '软件工程师 · 研究员',
-    mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找 2026 年岗位'],
+    mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找应届生岗位'],
     featured: {
       kicker: '正在开发',
       path: '/research/patient-education',
@@ -132,7 +132,7 @@ export const education = [
   {
     school: { en: 'University of Massachusetts Amherst', zh: '麻省大学阿默斯特分校' },
     degree: { en: 'MS, Computer Science', zh: '计算机科学硕士' },
-    date: { en: 'Expected May 2026', zh: '预计 2026 年 5 月毕业' },
+    date: { en: '2025 — 2026', zh: '2025 年 — 2026 年' },
   },
   {
     school: { en: 'University of Massachusetts Boston', zh: '麻省大学波士顿分校' },
