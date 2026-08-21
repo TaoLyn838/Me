@@ -299,7 +299,10 @@ export const links = {
   github: 'https://github.com/TaoLyn838',
   linkedin: 'https://linkedin.com/in/ctlin001',
   email: 'chengtaolinctl@gmail.com',
-  resume: { en: '/resume/resume_en.pdf', zh: '/resume/resume_zh.pdf' },
+  resume: {
+    en: `${import.meta.env.BASE_URL}resume/resume_en.pdf`,
+    zh: `${import.meta.env.BASE_URL}resume/resume_zh.pdf`,
+  },
 }
 
 export const theme = {
