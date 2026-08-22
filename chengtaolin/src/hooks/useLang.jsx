@@ -6,7 +6,10 @@ const LangCtx = createContext({ lang: 'en', setLang: () => {} })
 export function LangProvider({ children, storageKey = 'dir-lang' }) {
   const [lang, setLang] = useState(() => {
     try {
-      return localStorage.getItem(storageKey) || 'en'
+      const saved = localStorage.getItem(storageKey)
+      // English is the default; only a value we actually support may override it,
+      // so a stale or corrupted entry cannot render an undefined copy bundle.
+      return saved === 'en' || saved === 'zh' ? saved : 'en'
     } catch {
       return 'en'
     }
