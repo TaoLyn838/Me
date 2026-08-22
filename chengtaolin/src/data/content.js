@@ -50,7 +50,7 @@ export const copy = {
   },
   zh: {
     name: '林程涛',
-    roleShort: 'AI 工具工程师',
+    roleShort: '软件工程师 · 研究员',
     roleLong: '计算机科学硕士 · AI 工具、Agent 与系统',
     nowLine: '现状：已从 UMass Amherst 获得计算机科学硕士学位；主要在做 AI 工具与 LM-judge 评测流程，聚焦医疗与研究场景，目前正在寻找应届生岗位。',
     bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
@@ -99,10 +99,10 @@ export const experiences = [
     date: { en: 'Jul 2024 – Aug 2025', zh: '2024 年 7 月 – 2025 年 8 月' },
     location: 'Remote',
     summary: {
-      en: 'Supported the Tech Interview Prep course with live algorithm Q&A, breakout-room guidance, and hands-on feedback during coding sessions.',
-      zh: '在 Tech Interview Prep 课程中负责实时算法答疑、breakout room 指导，以及 coding 练习中的逐步反馈。',
+      en: 'Supported live online classes of 150+ students with real-time Q&A, led 5–6 breakout groups through lab work, and reviewed code toward independent debugging.',
+      zh: '在 150+ 人的线上课中实时解答学生问题，实验环节平均带 5–6 个小组完成练习，并通过代码审查引导学生独立排查问题。',
     },
-    highlights: ['Live Zoom Q&A', 'Guided 4–5 breakout rooms', 'Step-by-step feedback'],
+    highlights: ['150+ students', 'Led 5–6 breakout groups', 'Nominated “Best Tech Fellow”'],
   },
   {
     company: 'UMass Boston · Artificial Intelligence Lab',
@@ -110,10 +110,10 @@ export const experiences = [
     date: { en: 'Jan 2024 – Present', zh: '2024 年 1 月至今' },
     location: { en: 'Boston, MA', zh: '波士顿，MA' },
     summary: {
-      en: 'Built research prototypes and experiment pipelines for AI memory work, including dataset preparation, GNN experiments, and iterative result analysis.',
-      zh: '围绕 AI memory 方向搭建研究原型与实验管线，负责数据整理、GNN 实验和多轮结果分析。',
+      en: 'Work with the advisor on research direction and experiment design; own literature review, data analysis and preprocessing, and reusable Python experiment pipelines.',
+      zh: '与导师共同探讨研究方向与实验设计，负责文献调研、研究数据的分析与预处理，以及可复用的 Python 实验管线。',
     },
-    highlights: ['PTB / WikiText datasets', 'GNN prototypes', 'Experiment pipelines'],
+    highlights: ['Experiment pipelines', 'Data preprocessing', 'Reproducible results'],
   },
   // {
   //   company: 'HackUMass',
@@ -159,11 +159,23 @@ export const projects = [
     cat: 'Web',
     tech: ['FastAPI', 'PostgreSQL', 'Python', 'REST APIs'],
     desc: {
-      en: 'Designed backend APIs for a Minecraft server overseer project, aligning database schema and player-state responses with frontend needs.',
-      zh: '为 Minecraft server overseer 项目设计后端接口，对齐数据库 schema 与前端所需的玩家状态返回结构。',
+      en: 'Owned the server-side API layer for a Minecraft plugin tool, modelling player runtime state into responses and queries the frontend and analytics could consume directly.',
+      zh: '负责 Minecraft 插件工具的服务端 API 层，把玩家运行时状态整理成前端与分析流程可直接消费的接口结构与查询方式。',
     },
     link: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink',
     year: 2025,
+  },
+  {
+    title: 'Snapback',
+    cat: 'Web',
+    tech: ['React', 'Chart.js', 'Tailwind', 'Auth0', 'Netlify'],
+    desc: {
+      en: 'YHack 2026 relative-value terminal for prediction markets: infers market structure from unstructured titles, ranks pricing dislocations, and plots them against no-arbitrage envelopes.',
+      zh: 'YHack 2026 参赛作品，面向预测市场的相对价值终端：从不规整的标题中推断市场结构，计算并排序定价偏离，并把无套利约束画成曲线与边界图。',
+    },
+    link: 'https://devpost.com/software/snapback',
+    featured: true,
+    year: 2026,
   },
   {
     title: 'Robustness of Retrieval Models',
@@ -290,7 +302,7 @@ export const projects = [
 ]
 
 export const skills = {
-  languages: ['Python', 'Swift', 'JavaScript', 'SQL', 'Java', 'C'],
+  languages: ['Python', 'Swift', 'JavaScript', 'TypeScript', 'SQL', 'Java', 'C'],
   frameworks: ['PyTorch', 'FastAPI', 'Node.js', 'Express', 'React', 'SwiftUI', 'UIKit'],
   tools: ['OpenAI API', 'Docker', 'PostgreSQL', 'Git', 'VLMs', 'GNN', 'Xcode'],
 }
