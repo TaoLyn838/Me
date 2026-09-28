@@ -10,7 +10,7 @@ export const copy = {
     roleShort: 'Software Engineer & Researcher',
     roleLong: 'MS CS · AI tooling, agents, systems',
     nowLine:
-      'Recently graduated with an MS in CS from UMass Amherst. Building AI tooling and LM-judge evaluation workflows for healthcare and research use cases, and open to new-grad software roles.',
+      'MS in CS from UMass Amherst (2026). Now building conversation data for AI characters that stay in character, after benchmarking how fast LLMs answer under load. Open to AI and new-grad software roles.',
     bio: 'I build AI tooling, backend systems, and apps, with interests in language models, agents, and game-related systems.',
     bioLong:
       'I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
@@ -33,12 +33,12 @@ export const copy = {
     mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to new-grad roles'],
     featured: {
       kicker: 'Now building',
-      path: '/research/patient-education',
-      title: 'Patient education LM-judge pipeline',
-      desc: 'Unified evaluation workflow for a radiology patient-education system, comparing GPT, Gemini, and MedGemma outputs across Personalization, Doctor, and Imaging judges.',
+      path: '/projects/roleplay-synth',
+      title: 'Conversation data for AI characters',
+      desc: 'Fifty original characters, each with a voice, limits and topics they refuse. An AI writes conversations with them, a hand-graded checklist decides which replies stay in character, and held-out characters test the result. Generation and grading are done; the training comparison is in progress.',
       stats: [
-        { label: 'judges', value: '3' },
-        { label: 'models', value: '3' },
+        { label: 'characters', value: '50' },
+        { label: 'conversations', value: '11,959' },
       ],
     },
     writing: [
@@ -52,7 +52,7 @@ export const copy = {
     name: '林程涛',
     roleShort: '软件工程师 · 研究员',
     roleLong: '计算机科学硕士 · AI 工具、Agent 与系统',
-    nowLine: '现状：已从 UMass Amherst 获得计算机科学硕士学位；主要在做 AI 工具与 LM-judge 评测流程，聚焦医疗与研究场景，目前正在寻找应届生岗位。',
+    nowLine: '现状：2026 年从 UMass Amherst 获得计算机科学硕士学位。刚完成一个大模型推理速度的压测项目，现在在做让 AI 角色「不出戏」的对话数据。正在寻找 AI 与软件工程岗位。',
     bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
     bioLong:
       '我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
@@ -75,12 +75,12 @@ export const copy = {
     mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找应届生岗位'],
     featured: {
       kicker: '正在开发',
-      path: '/research/patient-education',
-      title: '患者教育 LM-judge 评测管线',
-      desc: '面向放射影像患者教育系统搭建统一评测流程，对 GPT、Gemini 与 MedGemma 在 Personalization、Doctor、Imaging 三类 judges 下的输出进行比较。',
+      path: '/projects/roleplay-synth',
+      title: 'AI 角色的对话数据',
+      desc: '50 个原创角色，各有说话方式、边界和会拒绝的话题。用 AI 生成与他们的对话，再用人工打过分的检查清单判断哪些回复没有出戏，并留出一部分角色专门做测试。生成与评分已完成，训练对比实验进行中。',
       stats: [
-        { label: '评测器', value: '3' },
-        { label: '模型', value: '3' },
+        { label: '角色', value: '50' },
+        { label: '段对话', value: '11,959' },
       ],
     },
     writing: [
@@ -107,13 +107,13 @@ export const experiences = [
   {
     company: 'UMass Boston · Artificial Intelligence Lab',
     role: { en: 'Research Fellow', zh: '研究员' },
-    date: { en: 'Jan 2024 – Present', zh: '2024 年 1 月至今' },
+    date: { en: 'Jan 2024 – Sep 2026', zh: '2024 年 1 月 – 2026 年 9 月' },
     location: { en: 'Boston, MA', zh: '波士顿，MA' },
     summary: {
-      en: 'Work with the advisor on research direction and experiment design; own literature review, data analysis and preprocessing, and reusable Python experiment pipelines.',
-      zh: '与导师共同探讨研究方向与实验设计，负责文献调研、研究数据的分析与预处理，以及可复用的 Python 实验管线。',
+      en: 'Worked with the advisor on research direction and experiment design; owned literature review, data analysis and preprocessing, and reusable Python experiment pipelines. Final project: a pre-registered study of whether sentence structure helps a frozen hallucination detector.',
+      zh: '与导师共同探讨研究方向与实验设计，负责文献调研、研究数据的分析与预处理，以及可复用的 Python 实验管线。收尾项目：一项预注册研究，检验句法结构能否帮助一个冻结的幻觉检测模型。',
     },
-    highlights: ['Experiment pipelines', 'Data preprocessing', 'Reproducible results'],
+    highlights: ['Pre-registered experiments', 'Hallucination detection', 'Experiment pipelines'],
   },
   // {
   //   company: 'HackUMass',
@@ -142,6 +142,27 @@ export const education = [
 ]
 
 export const projects = [
+  {
+    title: 'AI Character Dialogue Data',
+    cat: 'ML',
+    tech: ['vLLM', 'Ray Data', 'Llama 3.1', 'Qwen3', 'Python'],
+    desc: {
+      en: 'In progress. Fifty original characters with their own voices, limits and refusals; 11,959 AI-written conversations generated on one GPU; a seven-point checklist and 250 hand-graded replies used to test which AI grader can tell an in-character reply from a broken one.',
+      zh: '进行中。50 个原创角色，各有说话方式、边界和拒绝规则；在一张 GPU 上生成 11,959 段对话；用七条检查清单和 250 条人工评分，测试哪个 AI 评分器能分辨「在戏里」和「出戏」的回复。',
+    },
+    year: 2026,
+  },
+  {
+    title: 'LLM Inference Benchmark',
+    cat: 'ML',
+    tech: ['vLLM', 'Llama 3.1', 'A100', 'Python'],
+    desc: {
+      en: 'Measured how fast an open LLM answers as more users arrive, against a declared speed target. Sending each conversation back to the server that already holds it made first replies 1.77× faster; reusing processed text made them up to 4.6× faster.',
+      zh: '在事先定好的速度标准下，测量开源大模型在用户增多时的响应速度。把每段对话送回已经缓存它的服务器，首个回复快 1.77 倍；复用已处理过的文本，最多快 4.6 倍。',
+    },
+    featured: true,
+    year: 2026,
+  },
   {
     title: 'Patient Education System',
     cat: 'ML',
