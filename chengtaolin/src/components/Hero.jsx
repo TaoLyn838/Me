@@ -110,10 +110,7 @@ export function Hero() {
           margin: '16px 0 0',
         }}
       >
-        <span style={{ color: T.ink, fontWeight: 500 }}>
-          {lang === 'en' ? 'Currently. ' : '现状。'}
-        </span>
-        {c.nowLine.replace(/^(Currently:|Currently|现状：|现状:)\s*/, '')}
+        {c.nowLine}
       </p>
 
       <div
