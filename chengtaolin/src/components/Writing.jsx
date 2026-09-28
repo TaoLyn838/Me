@@ -13,12 +13,12 @@ export function Writing() {
         lang={lang}
       />
       <div>
-        {c.writing.map((w, i) => (
-          <a
+        {c.writing.map((w, i) => {
+          const Row = w.href ? 'a' : 'div'
+          return (
+          <Row
             key={i}
-            href={w.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(w.href ? { href: w.href, target: '_blank', rel: 'noopener noreferrer' } : {})}
             className="writing-row"
             style={{
               display: 'grid',
@@ -44,7 +44,7 @@ export function Writing() {
               </span>
               <span style={{ fontFamily: T.sans, fontSize: 14.5, color: T.inkFaint, marginLeft: 12 }}>{w.tag}</span>
             </div>
-            <span
+            {w.href && <span
               className="writing-link"
               style={{
                 fontFamily: T.sans,
@@ -55,9 +55,10 @@ export function Writing() {
               }}
             >
               {w.read} →
-            </span>
-          </a>
-        ))}
+            </span>}
+          </Row>
+          )
+        })}
       </div>
     </section>
   )

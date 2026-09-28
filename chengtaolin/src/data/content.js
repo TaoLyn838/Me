@@ -10,7 +10,7 @@ export const copy = {
     roleShort: 'Software Engineer & Researcher',
     roleLong: 'MS CS · AI tooling, agents, systems',
     nowLine:
-      'MS in CS from UMass Amherst (2026). Now building conversation data for AI characters that stay in character, after benchmarking how fast LLMs answer under load. Open to AI and new-grad software roles.',
+      'Graduated from UMass Amherst with an MS in Computer Science in 2026. I recently benchmarked how fast LLMs respond under load, and I’m now building conversation data for AI characters that stay in character.',
     bio: 'I build AI tooling, backend systems, and apps, with interests in language models, agents, and game-related systems.',
     bioLong:
       'I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
@@ -30,7 +30,7 @@ export const copy = {
     langToggle: '中文',
     // Masthead title-page block: italic role line + letterspaced meta row.
     mastheadRole: 'Software Engineer & Researcher',
-    mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to new-grad roles'],
+    mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to AI & software roles'],
     featured: {
       kicker: 'Now building',
       path: '/projects/roleplay-synth',
@@ -43,8 +43,8 @@ export const copy = {
     },
     writing: [
       { title: 'Patient education system paper', date: 'Apr 2026', tag: 'Paper', read: 'arXiv', href: 'https://arxiv.org/abs/2604.14656' },
-      { title: 'Block by Block backend notes', date: 'Fall 2025', tag: 'Systems', read: 'brief', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink' },
-      { title: 'Retrieval robustness study notes', date: 'Fall 2025', tag: 'Research', read: 'brief', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink' },
+      { title: 'Block by Block backend notes', date: 'Fall 2025', tag: 'Systems', read: 'brief' }, // link off 2026-09-28: https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink
+      { title: 'Retrieval robustness study notes', date: 'Fall 2025', tag: 'Research', read: 'brief' }, // link off 2026-09-28: https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink
       // { title: 'UMass Boston AI lab profile', date: '2024–Now', tag: 'Lab', read: 'profile', href: 'https://www.umb.edu/directory/chengtaolin001/' },
     ],
   },
@@ -52,7 +52,7 @@ export const copy = {
     name: '林程涛',
     roleShort: '软件工程师 · 研究员',
     roleLong: '计算机科学硕士 · AI 工具、Agent 与系统',
-    nowLine: '现状：2026 年从 UMass Amherst 获得计算机科学硕士学位。刚完成一个大模型推理速度的压测项目，现在在做让 AI 角色「不出戏」的对话数据。正在寻找 AI 与软件工程岗位。',
+    nowLine: '2026 年毕业于 UMass Amherst，获计算机科学硕士学位。最近完成了一个大模型推理速度的压测项目，现在在做让 AI 角色「不出戏」的对话数据。',
     bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
     bioLong:
       '我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
@@ -72,7 +72,7 @@ export const copy = {
     langToggle: 'EN',
     // 刊头区块：斜体职位行 + 字距展开的信息行
     mastheadRole: '软件工程师 · 研究员',
-    mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找应届生岗位'],
+    mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找 AI 与软件工程岗位'],
     featured: {
       kicker: '正在开发',
       path: '/projects/roleplay-synth',
@@ -85,8 +85,8 @@ export const copy = {
     },
     writing: [
       { title: '患者教育系统论文', date: '2026 年 4 月', tag: '论文', read: 'arXiv', href: 'https://arxiv.org/abs/2604.14656' },
-      { title: 'Block by Block 后端笔记', date: '2025 年秋季', tag: '系统', read: '材料', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink' },
-      { title: '检索鲁棒性研究笔记', date: '2025 年秋季', tag: '研究', read: '材料', href: 'https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink' },
+      { title: 'Block by Block 后端笔记', date: '2025 年秋季', tag: '系统', read: '材料' }, // link off 2026-09-28: https://tlarkusdmdikg68r.usttp.larksuite.com/file/F5uubQTJGoyxmbxrEGXuwoyttNg?from=from_copylink
+      { title: '检索鲁棒性研究笔记', date: '2025 年秋季', tag: '研究', read: '材料' }, // link off 2026-09-28: https://tlarkusdmdikg68r.usttp.larksuite.com/file/VLdybFrzQo1k95xbUGduTV32t0d?from=from_copylink
       // { title: 'UMass Boston AI 实验室主页', date: '2024 年至今', tag: '实验室', read: '主页', href: 'https://www.umb.edu/directory/chengtaolin001/' },
     ],
   },
