@@ -10,7 +10,7 @@ export const copy = {
     roleShort: 'Software Engineer & Researcher',
     roleLong: 'MS CS · AI tooling, agents, systems',
     nowLine:
-      'Graduated from UMass Amherst with an MS in Computer Science in 2026. I recently benchmarked how fast LLMs respond under load, and I’m now building conversation data for AI characters that stay in character.',
+      'Graduated from UMass Amherst with an MS in Computer Science in 2026. I recently benchmarked how fast LLMs respond under load and finished a study on training data for AI characters that stay in character.',
     bio: 'I build AI tooling, backend systems, and apps, with interests in language models, agents, and game-related systems.',
     bioLong:
       'I’m interested in AI, language models, agents, and game-related systems, and my recent work spans LLM evaluation, backend tooling, and research engineering.',
@@ -32,10 +32,10 @@ export const copy = {
     mastheadRole: 'Software Engineer & Researcher',
     mastheadMeta: ['Boston, MA', 'MS CS · UMass Amherst', 'Open to AI & software roles'],
     featured: {
-      kicker: 'Now building',
+      kicker: 'Latest project',
       path: '/projects/roleplay-synth',
       title: 'Conversation data for AI characters',
-      desc: 'Fifty original characters, each with a voice, limits and topics they refuse. An AI writes conversations with them, a hand-graded checklist decides which replies stay in character, and held-out characters test the result. Generation and grading are done; the training comparison is in progress.',
+      desc: 'Fifty original characters, each with a voice, limits and topics they refuse. An AI wrote 11,959 conversations with them; I trained a small model on all of it, on the part an AI grader approved, and with human dialogue mixed in, then tested it on characters it had never seen. Filtering made no measurable difference, and my own blind grading showed why: the AI grader rejected more than half of the good replies.',
       stats: [
         { label: 'characters', value: '50' },
         { label: 'conversations', value: '11,959' },
@@ -52,7 +52,7 @@ export const copy = {
     name: '林程涛',
     roleShort: '软件工程师 · 研究员',
     roleLong: '计算机科学硕士 · AI 工具、Agent 与系统',
-    nowLine: '2026 年毕业于 UMass Amherst，获计算机科学硕士学位。最近完成了一个大模型推理速度的压测项目，现在在做让 AI 角色「不出戏」的对话数据。',
+    nowLine: '2026 年毕业于 UMass Amherst，获计算机科学硕士学位。最近完成了一个大模型推理速度的压测项目，以及一项关于让 AI 角色「不出戏」的训练数据研究。',
     bio: '主要做 AI 工具、后端系统和应用开发，关注语言模型、Agent 和游戏相关系统。',
     bioLong:
       '我对 AI、语言模型、Agent 和游戏相关系统感兴趣，近期主要在做 LLM 评测、后端工具和研究工程。',
@@ -74,10 +74,10 @@ export const copy = {
     mastheadRole: '软件工程师 · 研究员',
     mastheadMeta: ['波士顿，MA', '计算机科学硕士 · UMass Amherst', '寻找 AI 与软件工程岗位'],
     featured: {
-      kicker: '正在开发',
+      kicker: '最新项目',
       path: '/projects/roleplay-synth',
       title: 'AI 角色的对话数据',
-      desc: '50 个原创角色，各有说话方式、边界和会拒绝的话题。用 AI 生成与他们的对话，再用人工打过分的检查清单判断哪些回复没有出戏，并留出一部分角色专门做测试。生成与评分已完成，训练对比实验进行中。',
+      desc: '50 个原创角色，各有说话方式、边界和会拒绝的话题。用 AI 生成了 11,959 段与他们的对话，再用三种数据训练一个小模型：全部对话、AI 评分器筛过的对话、掺入真人对话的版本，并在没见过的角色上测试。筛选没有带来可测出的差别；我自己盲评后发现，评分器把一半以上合格的回复判成了不合格。',
       stats: [
         { label: '角色', value: '50' },
         { label: '段对话', value: '11,959' },
@@ -147,8 +147,8 @@ export const projects = [
     cat: 'ML',
     tech: ['vLLM', 'Ray Data', 'Llama 3.1', 'Qwen3', 'Python'],
     desc: {
-      en: 'In progress. Fifty original characters with their own voices, limits and refusals; 11,959 AI-written conversations generated on one GPU; a seven-point checklist and 250 hand-graded replies used to test which AI grader can tell an in-character reply from a broken one.',
-      zh: '进行中。50 个原创角色，各有说话方式、边界和拒绝规则；在一张 GPU 上生成 11,959 段对话；用七条检查清单和 250 条人工评分，测试哪个 AI 评分器能分辨「在戏里」和「出戏」的回复。',
+      en: 'Fifty original characters with their own voices, limits and refusals; 11,959 AI-written conversations generated on one GPU; a small model trained nine times on unfiltered, AI-graded and human-mixed data, then tested on unseen characters. Planned in advance: filtering made no measurable difference, and 340 hand-graded replies showed the AI grader was too strict to trust.',
+      zh: '50 个原创角色，各有说话方式、边界和拒绝规则；在一张 GPU 上生成 11,959 段对话；用未筛选、AI 评分器筛选、掺入真人对话三种数据把一个小模型训练了 9 次，再在没见过的角色上测试。实验方案事先定好：筛选没有带来可测出的差别，340 条人工评分显示评分器过严、不可靠。',
     },
     year: 2026,
   },
